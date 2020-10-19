@@ -1,5 +1,7 @@
 # ETHonline Hackathon Project:
 
+![logo](/public/images/OracleLogo.png)
+
 ## A Sandboxing App for Oracles
 
 Current url: (https://ethoraclesandbox.web.app)

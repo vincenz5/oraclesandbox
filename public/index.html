@@ -1,1130 +1,891 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<meta charset="utf-8">
-		<!-- Title-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Oracle Sandbox</title>
-		<!-- Google Fonts  
-        ================================================== -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway:300,500,400,700' rel='stylesheet' type='text/css'>
-		<!-- Load CSS 
-        ================================================== -->
-		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-		<link href="css/animate.min.css" rel="stylesheet" type="text/css"/>
-		<link href="css/owl.carousel.css" rel="stylesheet" type="text/css"/>
-		<!--Pretty photo-->
-		<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css"/>
-		<!-- Your Work -->
-		<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css"/>
-		<!-- Color panel -->
-		<link href="css/color_panel.css" rel="stylesheet" type="text/css" />
-		<!-- Main Style -->
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
-		<link href="css/responsive.css" rel="stylesheet" type="text/css" />
-		<!-- Default Color Scheme -->
-		<link href="css/color-schemes/blue.css" id="changeable-colors" rel="stylesheet" type="text/css" />
-		<!-- /.CSS Ends -->
+		<link rel="shortcut icon" type="image/x-icon" href="./../favicon.ico" />
+
+		<link href="css/master.css" rel="stylesheet">
+
+		<!-- SWITCHER -->
+		<link rel="stylesheet" id="switcher-css" type="text/css" href="plugins/switcher/css/switcher.css" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="plugins/switcher/css/color1.css" title="color1" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="plugins/switcher/css/color2.css" title="color2" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="plugins/switcher/css/color3.css" title="color3" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="plugins/switcher/css/color4.css" title="color4" media="all" />
+
+		<script>src="./app.js"</script>
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 	</head>
-<body>
-<!-- PAGE LOADER -->
-	<div id='preloader' >
-		<div class='loader' >
-			<img src='images/loader.GIF' alt="preloader">
-		</div>
-	</div>
-<!-- NAVIGATION MENU -->
-<div id="navigation-menu">
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
-					<span class="sr-only">Toggle navigation</span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span> 
-				</button>
-				<a class="navbar-brand" href="#">Oracle Sandbox</a>
-				<p>Master your off-chain data security</p> 
-			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">		
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#navigation-menu"  class="scroll">HOME</a></li>
-					<li><a href="#we-are" class="scroll">ABOUT</a></li>
-					<li><a href="#team" class="scroll">TEAM</a></li>
-					<li><a href="#services" class="scroll">COLLABORATE</a></li>
-					<li><a href="#pricings" class="scroll">THE CODE</a></li>
-					<li><a href="#portfolio" class="scroll">DOCUMENTS</a></li>
-					<li><a href="#contact" class="scroll">CONTACT</a></li>
-				</ul>
-			</div>
-		<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container-fluid -->
-	</nav>
-</div><!-- /.NAVIGATION MENU -->
-
-<!-- TEXT SLIDER -->
-<div class="text-slider parallaxbg">
-	<div class="pattern-overlay"></div>
-	<div class="slider-container">
-		<div class="home-text-slider slider-text owl-carousel owl-theme animated" data-animation="fadeInUp" data-animation-delay="1500">
-			<!-- SLIDE ITEM-1 -->
-			<div class="item">
-				<h3><span class="color">TEST OUT</span> ORACLE SECURITY</h3>
-				<p>ELEGANT &amp; CLEAN INTERFACE FOR TESTING</p>
-			</div>
-			<!-- SLIDE ITEM-2 -->
-			<div class="item">
-				<h3><span class="color">CLEAN</span> & ELEGANT TEMPLATES</h3>
-				<p>HACK FOR ETHonline</p>
-			</div>
-			<!-- SLIDE ITEM-3 -->
-			<div class="item">
-				<h3>MODERN READY <span class="color">MUSE TEMPLATES</span></h3>
-				<p>INSPIRATIONAL MODERN WEBSITES MADE BY OUR TEAM</p>
-			</div>
-		</div>
-		<div class="scroll-down">
-			<a href="#we-are" class="scroll"><i class="fa fa-angle-double-down"></i></a>
-		</div>
-	</div>
-</div><!-- /.TEXT SLIDER -->
-
-<!--WE ARE SECTION-->
-<section id="we-are">
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title">
-				<h2 class="animated" data-animation="fadeInDown" data-animation-delay="300">We Are Aven</h2>
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300">Creative Web Developers</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-		<div class="row">
-			<div class="col-md-3 we-are-block animated"  data-animation="fadeInUp" data-animation-delay="300">
-				<!--WE ARE TITLE-->
-				<div class="icon-title">
-					<h4>Ultra Clean</h4>
-					<h3>Design</h3>
-				</div>
-				<!--ICON-->
-				<div class="pull-left">
-					<i class="fa fa-pencil-square-o"></i>				
-				</div>
-				<!--DESCRIPTION-->
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit a massa vehicula cursus ac ac felis. Praesent posuere.</p>
-			</div>
-			<div class="col-md-3 we-are-block animated"  data-animation="fadeInUp" data-animation-delay="500">
-				<!--WE ARE TITLE-->
-				<div class="icon-title">
-					<h4>Modern Ready</h4>
-					<h3>Template</h3>
-				</div>
-				<!--ICON-->
-				<div class="pull-left">
-					<i class="fa fa-paper-plane"></i>				
-				</div>
-				<!--DESCRIPTION-->
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit a massa vehicula cursus ac ac felis. Praesent posuere.</p>
-			</div>
-			<div class="col-md-3 we-are-block animated"  data-animation="fadeInUp" data-animation-delay="700">
-				<!--WE ARE TITLE-->
-				<div class="icon-title">
-					<h4>Full Screen</h4>
-					<h3>Slider</h3>
-				</div>
-				<!--ICON-->
-				<div class="pull-left">
-					<i class="fa fa-crosshairs"></i>				
-				</div>
-				<!--DESCRIPTION-->
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit a massa vehicula cursus ac ac felis. Praesent posuere.</p>
-			</div>
-			<div class="col-md-3 we-are-block animated"  data-animation="fadeInUp" data-animation-delay="900">
-				<!--WE ARE TITLE-->
-				<div class="icon-title">
-					<h4>Maximized</h4>
-					<h3>Features</h3>
-				</div>
-				<!--ICON-->
-				<div class="pull-left">
-					<i class="fa fa-pie-chart"></i>			
-				</div>
-				<!--DESCRIPTION-->
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit a massa vehicula cursus ac ac felis. Praesent posuere.</p>
-			</div>
-		</div>
-	</div>
-</section><!-- /.WE ARE SECTION-->
-
-<!-- FEATURES SECTION-->
-<section id="features" class="color">
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title">
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300"><span class="color">Aven</span>'s Features</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-		<div class="row">
-			<!--FEATURES LEFT-SIDE-->
-			<div class="features-left">
-				<div class="feature animated" data-animation="fadeInLeft" data-animation-delay="500">
-					<!--FEATURE-ICON-->
-					<div class="feature-icon">
-						<i class="fa fa-area-chart"></i>
-					</div>
-					<!--FEATURE-DESCRIPTION-->
-					<div class="features-title">
-						<h3>Creative Business Ideas</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit.</p>
-					</div>
-				</div>
-				<div class="feature animated" data-animation="fadeInLeft" data-animation-delay="700">
-					<!--FEATURE-ICON-->
-					<div class="feature-icon">
-						<i class="fa fa-bullhorn"></i>
-					</div>
-					<!--FEATURE-DESCRIPTION-->
-					<div class="features-title">
-						<h3>Information Technology</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit.</p>
-					</div>
-				</div>
-				<div class="feature animated" data-animation="fadeInLeft" data-animation-delay="900">
-					<!--FEATURE-ICON-->
-					<div class="feature-icon">
-						<i class="fa fa-lightbulb-o"></i>
-					</div>
-					<!--FEATURE-DESCRIPTION-->
-					<div class="features-title">
-						<h3>Professional Team</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit.</p>
-					</div>
-				</div>
-					
-			</div><!-- /.FEATURES LEFT-SIDE-->
-			<!--FEATURES IMAGE-->
-			<div class="features-image animated" data-animation="pulse" data-animation-delay="500">
-				<img src="images/features/iPhone.png" class="img-responsive" alt="phone" height="678" width="330">
-			</div><!-- /.FEATURES IMAGE-->
-			<!--FEATURES RIGHT-SIDE-->
-			<div class="features-right">
-				<div class="feature animated" data-animation="fadeInRight" data-animation-delay="500">
-					<!--FEATURE-ICON-->
-					<div class="feature-icon">
-						<i class="fa fa-magic"></i>
-					</div>
-					<!--FEATURE-DESCRIPTION-->
-					<div class="features-title">
-						<h3>Clean Web Designs</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit.</p>
-					</div>
-				</div>
-				<div class="feature animated" data-animation="fadeInRight" data-animation-delay="700">
-					<!--FEATURE-ICON-->
-					<div class="feature-icon">
-						<i class="fa fa-desktop"></i>
-					</div>
-					<!--FEATURE-DESCRIPTION-->
-					<div class="features-title">
-						<h3>Modern Ready Code</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit.</p>
-					</div>
-				</div>
-				<div class="feature animated" data-animation="fadeInRight" data-animation-delay="900">
-					<!--FEATURE-ICON-->
-					<div class="feature-icon">
-						<i class="fa fa-umbrella"></i>
-					</div>
-					<!--FEATURE-DESCRIPTION-->
-					<div class="features-title">
-						<h3>Free Support System</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit.</p>
-					</div>
-				</div>
-				
-			</div><!-- /.FEATURES RIGHT-SIDE-->
-		</div>
-	</div>
-</section><!-- /.FEATURES SECTION-->
-
-<!-- COUNTER SECTION-->
-<div id="counter" class="parallaxbg">
-	<div class="counter-section">
-		<div class="pattern-overlay"></div>
-		<div class="container">
-			<div class="row">
-				<!--Counter-1-->
-				<div class="col-sm-3 animated" data-animation="fadeInUp" data-animation-delay="300">
-					<i class="fa fa-gift"></i>
-					<!--Data Count -->
-					<div class="count-number fun-number" data-count="1080">
-						<div class="counter"></div>
-					</div>
-					<!--Counter Title -->
-					<p>Projects</p>
-				</div>
-				<!--Counter-2-->
-				<div class="col-sm-3 animated" data-animation="fadeInUp" data-animation-delay="500">
-					<i class="fa fa-leaf"></i>
-					<!--Data Count -->
-					<div class="count-number fun-number" data-count="650">
-						<div class="counter"></div>
-					</div>
-					<!--Counter Title -->
-					<p>Clients</p>
-				</div>
-				<!--Counter-3-->
-				<div class="col-sm-3 animated" data-animation="fadeInUp" data-animation-delay="700">
-					<i class="fa fa-trophy"></i>
-					<!--Data Count -->
-					<div class="count-number fun-number" data-count="80">
-						<div class="counter"></div>
-					</div>
-					<!--Counter Title -->
-					<p>Awards</p>
-				</div>
-				<!--Counter-4-->
-				<div class="col-sm-3 animated" data-animation="fadeInUp" data-animation-delay="1100">
-					<i class="fa fa-map-marker"></i>
-					<!--Data Count -->
-					<div class="count-number fun-number" data-count="180">
-						<div class="counter"></div>
-					</div>
-					<!--Counter Title -->
-					<p>Branches</p>
-				</div>
-			</div>
-		</div>
-	</div>	
-</div><!-- /.COUNTER SECTION-->	
-
-<!-- TEAM SECTION-->
-<section id="team">
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title">
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300"><span class="color">Aven</span>'s Team</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-		<div class="row">
-			<div class="col-sm-3">
-				<!--TEAM MEMBER-1-->
-				<div class="thumbnail animated" data-animation="flipInY" data-animation-delay="300">
-					<!--TEAM MEMBER-PHOTO-->
-					<img src="images/team/1.jpg" alt="team-1" width="240" height="240">
-					<!--TEAM MEMBER-DETAILS-->
-					<div class="caption">
-						<h3>Mec Callan</h3>
-						<p>Co-Founder / Manager</p>
-						<p>Sit amet, consectetur adipiscing elit. Aenean consectetur suscipit viverra. Morbi non arcu blandit.</p>
-						<!--TEAM SOCIAL LINKS-->
-						<ul>
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-google-plus"></a></li>
-							<li><a href="#" class="fa fa-youtube"></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /.TEAM MEMBER-1-->
-			</div>
-			<div class="col-sm-3">
-				<!--TEAM MEMBER-2-->
-				<div class="thumbnail animated" data-animation="flipInY" data-animation-delay="500">
-					<!--TEAM MEMBER-PHOTO-->
-					<img src="images/team/2.jpg" alt="team-2" width="240" height="240">
-					<!--TEAM MEMBER-DETAILS-->
-					<div class="caption">
-						<h3>Mariya Sean</h3>
-						<p>Wordpress Developer</p>
-						<p>Sit amet, consectetur adipiscing elit. Aenean consectetur suscipit viverra. Morbi non arcu blandit.</p>
-						<!--TEAM SOCIAL LINKS-->
-						<ul>
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-google-plus"></a></li>
-							<li><a href="#" class="fa fa-youtube"></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /.TEAM MEMBER-2-->
-			</div>
-			<div class="col-sm-3">
-				<!--TEAM MEMBER-3-->
-				<div class="thumbnail animated" data-animation="flipInY" data-animation-delay="700">
-					<!--TEAM MEMBER-PHOTO-->
-					<img src="images/team/3.jpg" alt="team-3" width="240" height="240">
-					<!--TEAM MEMBER-DETAILS-->
-					<div class="caption">
-						<h3>Robwrt John</h3>
-						<p>HTML & CSS Developer</p>
-						<p>Sit amet, consectetur adipiscing elit. Aenean consectetur suscipit viverra. Morbi non arcu blandit.</p>
-						<!--TEAM SOCIAL LINKS-->
-						<ul>
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-google-plus"></a></li>
-							<li><a href="#" class="fa fa-youtube"></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /.TEAM MEMBER-3-->
-			</div>
-			<div class="col-sm-3">
-				<!--TEAM MEMBER-4-->
-				<div class="thumbnail animated" data-animation="flipInY" data-animation-delay="900">
-					<!--TEAM MEMBER-PHOTO-->
-					<img src="images/team/4.jpg" alt="team-4" width="240" height="240">
-					<!--TEAM MEMBER-DETAILS-->
-					<div class="caption">
-						<h3>Jessica Smith</h3>
-						<p>Graphic / Logo Designer</p>
-						<p>Sit amet, consectetur adipiscing elit. Aenean consectetur suscipit viverra. Morbi non arcu blandit.</p>
-						<!--TEAM SOCIAL LINKS-->
-						<ul>
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-google-plus"></a></li>
-							<li><a href="#" class="fa fa-youtube"></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /.TEAM MEMBER-4-->
-			</div>
-		</div>
-	</div>
-</section><!-- /.TEAM SECTION-->	
-
-<!-- SKILLS SECTION-->
-<section id="skills" class="color">
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title">
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300">Excellence Skills</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<!--PROGRESS BAR-1-->
-				<p>HTML & CSS</p>
-				<div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-						<span class="sr-only">90% Complete</span>
-						<div class="tooltip top" role="tooltip">
-							<div class="tooltip-inner">
-							90%
-							</div>
-							<div class="tooltip-arrow">
-							</div>
-						</div>
-					</div>		
-				</div>
-				<!--PROGRESS BAR-2-->
-				<p>JAVASCRIPT & JQUERY</p>
-				<div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-					<span class="sr-only">60% Complete</span>
-						<div class="tooltip top" role="tooltip">
-							<div class="tooltip-inner">
-							60%
-							</div>
-							<div class="tooltip-arrow">
-							</div>
+	<body class="animated-css">
+		<div class="sp-body">
+		<!-- Loader Landing Page -->
+		<div id="ip-container" class="ip-container"> 
+			<div class="ip-header" >
+				<div class="ip-loader">
+					<div class="text-center">
+						<div class="ip-logo">
+							<a class="logo"></a>
 						</div>
 					</div>
-				</div>
-				<!--PROGRESS BAR-3-->
-				<p>AJAX / ANGULAR JS</p>
-				<div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-					<span class="sr-only">55% Complete</span>
-						<div class="tooltip top" role="tooltip">
-							<div class="tooltip-inner">
-							55%
-							</div>
-							<div class="tooltip-arrow">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<!--PROGRESS BAR-4-->
-				<p>BLOGGER</p>
-				<div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-					<span class="sr-only">80% Complete</span>
-						<div class="tooltip top" role="tooltip">
-							<div class="tooltip-inner">
-							80%
-							</div>
-							<div class="tooltip-arrow">
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--PROGRESS BAR-5-->
-				<p>WORDPRESS</p>
-				<div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-					<span class="sr-only">95% Complete</span>
-						<div class="tooltip top" role="tooltip">
-							<div class="tooltip-inner">
-							95%
-							</div>
-							<div class="tooltip-arrow">
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--PROGRESS BAR-6-->
-				<p>MAGENTO</p>
-				<div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-					<span class="sr-only">65% Complete</span>
-						<div class="tooltip top" role="tooltip">
-							<div class="tooltip-inner">
-							65%
-							</div>
-							<div class="tooltip-arrow">
-							</div>
-						</div>
-					</div>
+					<svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+						<path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,39.3,10z"/>
+						<path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+					</svg> 
 				</div>
 			</div>
 		</div>
-	</div>
-</section><!-- /.SKILL SECTION-->	
-		
-<!-- RESPONSIVE SECTION-->
-<section id="responsive" class="parallaxbg">
-	<div class="responsive-section">
-		<div class="pattern-overlay"></div>
-		<div class="container">
-			<div class="row">
-				<!-- RESPONSIVE DESCRIPTION-->
-				<div class="col-md-6 animated" data-animation="fadeInLeft" data-animation-delay="500">
-					<h2>We build clean responsive websites</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim, quam sollicitudin euismod porttitor, nulla ipsum tempus ante, quis tempus magna turpis vitae sem. Vivamus scelerisque finibus risus, at molestie quam aliquet quis.</p>
-					<!-- SEND BUTTON-->
-					<button class="btn">SEND A MESSAGE</button>
-				</div>
-				<!-- RESPONSIVE IMAGE-->
-				<div class="col-md-6 animated" data-animation="fadeInRight" data-animation-delay="500">
-					<img src="images/responsive/responsive-devices.png" class="img-responsive" alt="responsive" width="700" height="350">
-				</div>
-			</div>
-		</div>
-	</div>
-</section><!-- /.RESPONSIVE SECTION-->
-
-<!-- SERVICES SECTION-->
-<section id="services">
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title">
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300"><span class="color">Aven</span>'s Services</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-		<!-- SERVICES TOP-->
-		<div class="row services-top">
-			<!-- SERVICES BLOCK-1-->
-			<div class="col-sm-6 service-block left">
-				<div class="fa fa-fire animated" data-animation="pulse" data-animation-delay="300">
-					<i class="fa fa-fire"></i>
-				</div>
-				<h4 class="animated" data-animation="fadeInRight" data-animation-delay="500">Modern Ready</h4>
-				<h3 class="animated" data-animation="fadeInLeft" data-animation-delay="700">Design</h3>
-				<p class="animated" data-animation="fadeInUp" data-animation-delay="900">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit a massa vehicula cursus ac ac felis. Praesent posuere.</p>
-			</div>
-			<!-- SERVICES BLOCK-2-->
-			<div class="col-sm-6 service-block">
-				<div class="fa fa-paw animated" data-animation="pulse" data-animation-delay="300">
-					<i class="fa fa-paw"></i>
-				</div>
-				<h4 class="animated" data-animation="fadeInRight" data-animation-delay="500">Clean & Creative</h4>
-				<h3 class="animated" data-animation="fadeInLeft" data-animation-delay="700">Layout</h3>
-				<p class="animated" data-animation="fadeInUp" data-animation-delay="900">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit a massa vehicula cursus ac ac felis. Praesent posuere.</p>
-			</div>
-		</div><!-- /.SERVICES TOP-->
-		<!--MIDDLE LINE-->
-		<div class="middle-line">
-			<span>v</span>
-		</div>
-		<!-- SERVICES BOTTOM-->
-		<div class="row services-bottom">
-			<!-- SERVICES BLOCK-3-->
-			<div class="col-sm-6 service-block left">
-				<div class="fa fa-flag animated" data-animation="pulse" data-animation-delay="300">
-					<i class="fa fa-flag"></i>
-				</div>
-				<h4 class="animated" data-animation="fadeInRight" data-animation-delay="500">Font-Awesome</h4>
-				<h3 class="animated" data-animation="fadeInLeft" data-animation-delay="700">Icons</h3>
-				<p class="animated" data-animation="fadeInUp" data-animation-delay="900">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit a massa vehicula cursus ac ac felis. Praesent posuere.</p>
-			</div>
-			<!-- SERVICES BLOCK-4-->
-			<div class="col-sm-6 service-block">
-				<div class="fa fa-magic animated" data-animation="pulse" data-animation-delay="300">
-					<i class="fa fa-magic"></i>
-				</div>
-				<h4 class="animated" data-animation="fadeInRight" data-animation-delay="500">Free Type Kit</h4>
-				<h3 class="animated" data-animation="fadeInLeft" data-animation-delay="700">Fonts</h3>
-				<p class="animated" data-animation="fadeInUp" data-animation-delay="900">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et velit a massa vehicula cursus ac ac felis. Praesent posuere.</p>
-			</div>
-		</div><!-- /.SERVICES BOTTOM-->
-	</div>
-</section><!-- /.SERVICES SECTION-->
-
-<!-- WORKING SECTION-->
-<section id="working" class="parallaxbg">
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title white">
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300">Working Process</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-		<div class="row">
-			<div class="col-sm-3 animated" data-animation="bounceInUp" data-animation-delay="300">
-				<!--WORKING CIRCLE & TOOLTIP-->
-				<div class="working-circle" role="tooltip" data-toggle="tooltip" data-placement="top" title="Lorem ipsum dolor sit, constur adiping.Praesent posuere.">
-					<i class="fa fa-paint-brush"></i>
-					<!--TITLE-->
-					<p>WIRE FRAMING</p>
-				</div>
-			</div>
-			<div class="col-sm-3 animated"  data-animation="bounceInUp" data-animation-delay="500">	
-				<!--WORKING CIRCLE & TOOLTIP-->
-				<div class="working-circle" role="tooltip" data-toggle="tooltip" data-placement="top" title="Lorem ipsum dolor sit, constur adiping.Praesent posuere.">
-					<i class="fa fa-line-chart"></i>
-					<!--TITLE-->
-					<p>MOCK UPS</p>
-				</div>
-			</div>
-			<div class="col-sm-3 animated"  data-animation="bounceInUp" data-animation-delay="700">	
-				<!--WORKING CIRCLE & TOOLTIP-->
-				<div class="working-circle" role="tooltip" data-toggle="tooltip" data-placement="top" title="Lorem ipsum dolor sit, constur adiping.Praesent posuere.">
-					<i class="fa fa-paper-plane"></i>
-					<!--TITLE-->
-					<p>DEVELOPING</p>
-				</div>
-			</div>
-			<div class="col-sm-3 animated"  data-animation="bounceInUp" data-animation-delay="900">	
-				<!--WORKING CIRCLE & TOOLTIP-->
-				<div class="working-circle" role="tooltip" data-toggle="tooltip" data-placement="top" title="Lorem ipsum dolor sit, constur adiping.Praesent posuere.">
-					<i class="fa fa-magic"></i>
-					<!--TITLE-->
-					<p>PUBLISHING</p>
-				</div>
-			</div>	
-		</div>
-	</div>
-</section><!-- /.WORKING SECTION-->
-
-<!-- PRICINGS SECTION-->
-<section id="pricings">
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title">
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300"><span class="color">Best</span> Pricings</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-	</div>
-	<div class="container pricing-container">	
-		<div class="row">
-			<div class="col-md-offset-1 col-md-3 animated" data-animation="flipInY" data-animation-delay="300">
-				<!--BASIC TABLE-->
-				<div class="pricing-table">
-					<!--CATEGORY-->
-					<div class="category">
-						<h3>Basic</h3>
-					</div>
-					<!--FEATURES-->
-					<ul>
-						<li class="price">
-							<h4>$11</h4>
-							<p>PER MONTH</p>
-						</li>
-						<li>1 Top Level Domain</li>
-						<li>1 GB Hosting</li>
-						<li>10 GB Monthly Bandwidth</li>
-						<li>10 Email Accounts</li>
-						<li>Weekly Cloud Backup</li>
-						<li>24/7 Support</li>
-					</ul>
-					<!--BUTTON-->
-					<a class="btn">sign up</a>
-				</div>
-			</div>
-			<!--PREMIUM TABLE-->
-			<div class="col-md-4 animated" data-animation="flipInY" data-animation-delay="500">
-				<div class="pricing-table premium">
-					<!--CATEGORY-->
-					<div class="category">
-						<h3>PREMIUM</h3>
-					</div>
-					<!--FEATURES-->
-					<ul>
-						<li class="price">
-							<h4>$33</h4>
-							<p>PER MONTH</p>
-						</li>
-						<li>10 Top Level Domain</li>
-						<li>10 GB Hosting</li>
-						<li>100 GB Monthly Bandwidth</li>
-						<li>50 Email Accounts</li>
-						<li>Daily Cloud Backup</li>
-						<li>24/7 Support</li>
-					</ul>
-					<!--BUTTON-->
-					<a class="btn">sign up</a>
-				</div>
-			</div>
-			<!--PLUS TABLE-->
-			<div class="col-md-3 animated" data-animation="flipInY" data-animation-delay="300">
-				<div class="pricing-table">
-					<!--CATEGORY-->
-					<div class="category">
-						<h3>PLUS</h3>
-					</div>
-					<!---->
-					<ul>
-						<li class="price">
-							<h4>$55</h4>
-							<p>PER MONTH</p>
-						</li>
-						<li>Unlimited Domain</li>
-						<li>Unlimited Hosting</li>
-						<li>Unlimited Monthly Bandwidth</li>
-						<li>Unlimited Email Accounts</li>
-						<li>Hourly Cloud Backup</li>
-						<li>Live Chat Support</li>
-					</ul>
-					<!--BUTTON-->
-					<a class="btn">sign up</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section><!-- /.PRICINGS SECTION-->
-
-<!-- TESTIMONIALS SECTION-->
-<section id="testimonials"  class="parallaxbg">
-	<div class="pattern-overlay"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1 animated" data-animation="fadeInUp" data-animation-delay="300">
-				<div id="testimonials-slider" class="owl-carousel owl-theme">
-					<!--SLIDE ITEM 1-->
-					<div class="item">
-						<!--COMMENTS-->
-						<p>Aullam vitae sollicitudin eros. Cras varius vehicula velit ac congue quam dictum sed. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.Donec sed odio dui. Nulla vitae elit libero a pharetra augue. Nullam id dolor id ultricies ut vehicula ut id. Integer posuere erat a venenatis dapibus posuere velit aliquet duis mollis.</p>
-						<!--PHOTO-->
-						<img src="images/testimonial/1.jpg" class="img-circle" alt="client-photo" width="135" height="152">
-						<!--NAME-->
-						<h3>John Deo</h3>
-						<!--COMPANY-->
-						<p>Web company</p>
-					</div>
-					<!--SLIDE ITEM 2-->
-					<div class="item">
-						<!--COMMENTS-->
-						<p>Aullam vitae sollicitudin eros. Cras varius vehicula velit ac congue quam dictum sed. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.Donec sed odio dui. Nulla vitae elit libero a pharetra augue. Nullam id dolor id ultricies ut vehicula ut id. Integer posuere erat a venenatis dapibus posuere velit aliquet duis mollis.</p>
-						<!--PHOTO-->
-						<img src="images/testimonial/2.jpg" class="img-circle" alt="client-photo" width="135" height="152">
-						<!--NAME-->
-						<h3>Jessica Alba</h3>
-						<!--COMPANY-->
-						<p>Co company</p>
-					</div>
-					<!--SLIDE ITEM 3-->
-					<div class="item">
-						<!--COMMENTS-->
-						<p>Aullam vitae sollicitudin eros. Cras varius vehicula velit ac congue quam dictum sed. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.Donec sed odio dui. Nulla vitae elit libero a pharetra augue. Nullam id dolor id ultricies ut vehicula ut id. Integer posuere erat a venenatis dapibus posuere velit aliquet duis mollis.</p>
-						<!--PHOTO-->
-						<img src="images/testimonial/3.jpg" class="img-circle" alt="client-photo" width="135" height="152">
-						<!--NAME-->
-						<h3>Stuard Broad</h3>
-						<!--COMPANY-->
-						<p>Android company</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>	<!-- /.TESTIMONIALS SECTION-->	
-<!-- CLIENTS SECTION-->
-<section id="clients">
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title white">
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300"><span class="color">Our</span> Clients</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-		<div class="row">
-			<div class="col-md-12 animated" data-animation="fadeInUp" data-animation-delay="700">
-				<div id="clients-slider" class="owl-carousel owl-theme">
-					<!-- CLIENT-1 -->
-					<div class="item">
-						<img src="images/clients/1.png" class="img-responsive" alt="client" height="113" width="156">
-					</div>
-					<!-- CLIENT-2 -->
-					<div class="item">
-						<img src="images/clients/2.png" class="img-responsive" alt="client" height="113" width="156">
-					</div>
-					<!-- CLIENT-3 -->
-					<div class="item">
-						<img src="images/clients/3.png" class="img-responsive" alt="client" height="113" width="156">
-					</div>
-					<!-- CLIENT-4 -->
-					<div class="item">
-						<img src="images/clients/4.png" class="img-responsive" alt="client" height="113" width="156">
-					</div>
-					<!-- CLIENT-5 -->
-					<div class="item">
-						<img src="images/clients/5.png" class="img-responsive" alt="client" height="113" width="156">
-					</div>
-					<!-- CLIENT-6 -->
-					<div class="item">
-						<img src="images/clients/6.png" class="img-responsive" alt="client" height="113" width="156">
-					</div>
-					<!-- CLIENT-7 -->
-					<div class="item">
-						<img src="images/clients/7.png" class="img-responsive" alt="client" height="113" width="156">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>	
-
-<!-- PORTFOLIO SECTION-->
-<section id="portfolio">
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title">
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300"><span class="color">Aven</span>'s Portfolio</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<!-- Portfolio Filter Begins -->
-				<ul class="animated project-filters animated" id="filters" data-animation="fadeInUp" data-animation-delay="300">
-					<li><a href="#" data-filter=".all" class="filter active"> All</a></li>
-					<li><a href="#" data-filter=".web" class="filter">Web Design</a></li>
-					<li><a href="#" data-filter=".graphic" class="filter">Graphic design</a></li>
-					<li><a href="#" data-filter=".photo" class="filter">Photo</a></li>
-					<li><a href="#" data-filter=".brand" class="filter">Brandings</a></li>
-					<li><a href="#" data-filter=".mock" class="filter">Mock-ups</a></li> 
-				</ul>
-						
-				<!-- Portfolio Container Begins -->
-				<div class="project-grid">
-					<div class="grid-sizer"></div>
-					<!-- portfolio item 1 -->
-					<div class="item mini-item w2 all graphic mock">					
-						<!-- Image -->															
-						<img src="images/portfolio/1.jpg" alt="image" class="img-responsive" height="580" width="580">
-						<!-- Item Caption -->
-						<h3>New Web Design</h3>
-						<div class="item-caption">
-							<ul>
-								<li><a data-rel="prettyPhoto[gallery01]" href="images/portfolio/large/1.jpg" title="Portfolio"><i class="fa fa-search"></i></a></li>
-								<li><a href="#"><i class="fa fa-link"></i></a></li>
-								<li><a href="#"><i class="fa fa-star-o"></i></a></li>
-							</ul>
-						</div>				
-					</div>					
-					<!-- portfolio item 2 -->
-					<div class="item mini-item all web graphic photo">						
-						<div class="portfolio-item">
-							<!-- Image -->															
-							<img src="images/portfolio/2.jpg" alt="image" class="img-responsive" height="285" width="285">
-						   	<!-- Item Caption -->
-							<h3>New Web Design</h3>
-							<div class="item-caption">
-							<ul>
-								<li><a data-rel="prettyPhoto[gallery01]" href="images/portfolio/large/2.jpg" title="Portfolio"><i class="fa fa-search"></i></a></li>
-								<li><a href="#"><i class="fa fa-link"></i></a></li>
-								<li><a href="#"><i class="fa fa-star-o"></i></a></li>
-							</ul>
-						</div>	
-						</div>						
-					</div>
-					<!-- portfolio item 3 -->
-					<div class="item mini-item all mock brand web">						
-						<div class="portfolio-item">	
-							<!-- Image -->																	
-							<img src="images/portfolio/3.jpg" alt="image" class="img-responsive" height="285" width="285">	
-							<!-- Item Caption -->
-							<h3>New Web Design</h3>
-							<div class="item-caption">
-							<ul>
-								<li><a data-rel="prettyPhoto[gallery01]" href="images/portfolio/large/3.jpg" title="Portfolio"><i class="fa fa-search"></i></a></li>
-								<li><a href="#"><i class="fa fa-link"></i></a></li>
-								<li><a href="#"><i class="fa fa-star-o"></i></a></li>
-							</ul>
-						</div>						   
-						</div>						
-					</div>
-					<!-- portfolio item 4 -->
-					<div class="item mini-item all">						
-						<div class="portfolio-item">
-							<!-- Image -->								
-							<img src="images/portfolio/4.jpg" alt="image" class="img-responsive" height="285" width="285">
-						   	<!-- Item Caption -->
-							<h3>New Web Design</h3>
-							<div class="item-caption">
-								<ul>
-									<li><a data-rel="prettyPhoto[gallery01]" href="images/portfolio/large/4.jpg" title="Portfolio"><i class="fa fa-search"></i></a></li>
-									<li><a href="#"><i class="fa fa-link"></i></a></li>
-									<li><a href="#"><i class="fa fa-star-o"></i></a></li>
-								</ul>
-							</div>	
-						</div>						
-					</div>				   
-					
-					<!-- portfolio item 5 -->
-					<div class="item mini-item all brand graphic">						
-						<div class="portfolio-item">
-							<!-- Image -->								
-							<img src="images/portfolio/5.jpg" alt="image" class="img-responsive" height="580" width="285">
-						   	<!-- Item Caption -->
-							<h3>New Web Design</h3>
-							<div class="item-caption">
-								<ul>
-									<li><a data-rel="prettyPhoto[gallery01]" href="images/portfolio/large/5.jpg" title="Portfolio"><i class="fa fa-search"></i></a></li>
-									<li><a href="#"><i class="fa fa-link"></i></a></li>
-									<li><a href="#"><i class="fa fa-star-o"></i></a></li>
-								</ul>
-							</div>	
-						</div>						
-					</div>
-					<!-- portfolio item 6 -->
-					<div class="item mini-item w2 all photo">						
-						<div class="portfolio-item">
-							<!-- Image -->									
-							<img src="images/portfolio/6.jpg" alt="image" class="img-responsive" height="285" width="580">
-						   	<!-- Item Caption -->
-							<h3>New Web Design</h3>
-							<div class="item-caption">
-								<ul>
-									<li><a data-rel="prettyPhoto[gallery01]" href="images/portfolio/large/6.jpg" title="Portfolio"><i class="fa fa-search"></i></a></li>
-									<li><a href="#"><i class="fa fa-link"></i></a></li>
-									<li><a href="#"><i class="fa fa-star-o"></i></a></li>
-								</ul>
-							</div>	
-						</div>                                
-					</div>	
-					<!-- portfolio item 7 -->
-					<div class="item mini-item all photo web">						
-						<div class="portfolio-item">
-							<!-- Image -->									
-							<img src="images/portfolio/7.jpg" alt="image" class="img-responsive" height="285" width="285">
-						   	<!-- Item Caption -->
-							<h3>New Web Design</h3>
-							<div class="item-caption">
-								<ul>
-									<li><a data-rel="prettyPhoto[gallery01]" href="images/portfolio/large/7.jpg" title="Portfolio"><i class="fa fa-search"></i></a></li>
-									<li><a href="#"><i class="fa fa-link"></i></a></li>
-									<li><a href="#"><i class="fa fa-star-o"></i></a></li>
-								</ul>
-							</div>	
-						</div>                                
-					</div>					
-				</div><!-- end portfolioContainer -->
-			</div>
-		</div>
-	</div>
-</section>
-<!-- WORKING SECTION-->
-<section id="contact" class="parallaxbg">
-	<div class="pattern-overlay"></div>
-	<div class="container">
-		<div class="row">
-			<!--SECTION TITLE-->
-			<div class="col-md-12 title white">
-				<h1 class="animated" data-animation="fadeInDown" data-animation-delay="300">Contact Us</h1>
-				<p class="animated" data-animation="fadeInRight" data-animation-delay="500">We Are Digital Agencies From Earth, Web Publication Made Easy With Us.</p>
-				<p class="animated" data-animation="fadeInLeft" data-animation-delay="500">We Are Working on Complete World Wide</p>
-			</div><!-- /.SECTION TITLE-->
-		</div>
-		<div class="row">
-			<div class="col-md-offset-2 col-md-8 animated" data-animation="fadeInUp" data-animation-delay="300">
-			<p class="form-message"></p>
-				<!--CONTACT FORM-->
-				<form role="form" name="commentform" class="contact-form-horizontal" id="contactform" method="post" action="process.php">
-				<div class="row">
-					<div class="col-md-6">
-						<!-- NAME -->
-						<div class="input-group form-group">
-							<input type="text"  name="contact_name" id="contact_name"  class=" form-control input-name" placeholder="Your Name">
-						</div>
-					</div>
-					<div class="col-md-6">
-						<!-- PHONE NUMBER -->
-						<div class="input-group form-group">
-							<input type="text" name="contact_phone" id="contact_phone"  class=" form-control input-phone-number" placeholder="Your Tele Phone Number">
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">	
-						<!-- EMAIL -->
-						<div class="input-group form-group">
-							<input type="email"  name="contact_email" id="contact_email"  class=" form-control input-email" placeholder="E-mail">
-						</div>
-					</div>
-				</div>	
-				<!-- MESSAGE BOX -->
-				<div class="row">
-					<div class="col-md-12 message-box form-group">
-						<textarea class=" form-control textarea-message contact-message-box" rows="3" placeholder="Write Your Message here..." name="contact_message" data-bv-field="contact_message" id="contact_message"></textarea>
-						<!--SUBMIT BUTTON-->
-						<input type="submit" id="sendingbtn" class="btn" value="Submit">
-					</div>
-				</div>
-				</form><!-- /.CONTACT FORM-->
-			</div>
-		</div>
-	</div>
-	<!--CONTACT DETAILS-->
-	<div class="contact-details">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-offset-1 col-md-10">
+		<!-- Loader end -->
+		<!-- Start Switcher -->
+		<div class="switcher-wrapper">	
+			<div class="demo_changer">
+				<div class="demo-icon customBgColor"><i class="fa fa-cog fa-spin fa-2x"></i></div>
+				<div class="form_holder">
 					<div class="row">
-						<!--ADDRESS-->
-						<div class="col-sm-4 contact-block animated" data-animation="fadeInUp" data-animation-delay="300">
-							<div class="icon-circle">
-								<i class="fa fa-map-marker"></i>							</div>
-							<h3>Address</h3>
-							<p>129 LV High Street, Los Vegas</p>
-							<p>United States</p>
-						</div>
-						<!--CONTACT-->
-						<div class="col-sm-4 contact-block animated" data-animation="fadeInUp" data-animation-delay="500">
-							<div class="icon-circle">
-								<i class="fa fa-envelope"></i>							</div>
-							<h3>Contact</h3>
-							<p>+01 (2) 376 345790</p>
-							<p><a href="mailto:support@aven.co">ouremail@aven.co</a></p>
-						</div>
-						<!--SUPPORT-->
-						<div class="col-sm-4 contact-block animated" data-animation="fadeInUp" data-animation-delay="700">
-							<div class="icon-circle">
-								<i class="fa fa-heart"></i>							</div>
-							<h3>Support</h3>
-							<p>Send your request to</p>
-							<p><a href="mailto:support@aven.co">support@aven.co</a></p>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="predefined_styles">
+								<div class="skin-theme-switcher">
+									<h4>Skin</h4>
+									<a href="#" data-switchcolor="color1" class="styleswitch" style="background-color:#05c3f9;"> </a>
+									<a href="#" data-switchcolor="color2" class="styleswitch" style="background-color:#252525;"> </a>
+									<a href="#" data-switchcolor="color3" class="styleswitch" style="background-color:#8bc34a;"> </a>							
+									<a href="#" data-switchcolor="color4" class="styleswitch" style="background-color:#d94939;"> </a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			<script src="plugins/switcher/js/bootstrap-select.js"></script> 
+			<script src="plugins/switcher/js/evol.colorpicker.min.js" type="text/javascript"></script> 
+			<script src="plugins/switcher/js/dmss.js"></script>
 		</div>
-	</div><!-- /.CONTACT DETAILS-->	
-	<!--Map Section Begins-->
-	<div class="map">    
-		<div id="map_canvas"></div>    
-	</div>
-	<!--Footer Begins-->
-	<div id="footer">
-		<div class="container">
-			<!--SOCIAL LINKS-->
-			<div class="row">
-				<!--COPYRIGHTS-->
-				<div class="col-sm-6">
-					<p>Copyrights Aven - Creative Template 2014</p>
-				</div>	
-				<!--SOCIAL LINKS-->
-				<div class="col-sm-6">
-					<ul>
-						<li><a href="#" class="fa fa-facebook"></a></li>
-						<li><a href="#" class="fa fa-twitter"></a></li>
-						<li><a href="#" class="fa fa-google-plus"></a></li>
-						<li><a href="#" class="fa fa-youtube"></a></li>
-					</ul>
+		<!-- End Switcher -->
+		<header class="header pageRow paralax" style="background-image: url('media/paralax/1.jpg');">
+			<div class="overlay"></div>
+			<div class="wrapper">
+				<div class="header-outer">
+					<div class="header-inner">
+						<div class="header-top row">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a href="." class="logo"></a></div>
+							<div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
+								<i class="fa fa-bars mobileMenuNav whiteTxtColor"></i>
+								<nav class="nav-container customBgColor">
+									<i class="fa fa-times mobileMenuNav small-device"></i>
+									<ul class="menu">
+										<li class="search pull-right">
+											<form class="search-form form-inline" action="#" method="POST">
+												<div class="form-group">
+													<label class="sr-only" for="searchQuery">Search...</label>
+													<input type="search" class="search-field roboto" id="searchQuery" placeholder="Search...">
+												</div>
+												<button type="submit" class="hidden">Search</button>
+											</form>
+											<a class="iconSearch roboto whiteTxtColor" href="#"><i class="fa fa-search"></i></a>
+										</li>
+										<li class="dropdown">
+											<a data-toggle="dropdown" class="roboto whiteTxtColor dropdown-toggle" href="home-1.html">HOME <i class="fa fa-angle-down"></i></a>
+											<ul class="dropdown-menu clearfix">
+												<li><a class="roboto" href="home-1.html">HOME Version 1</a></li>
+												<li><a class="roboto" href="home-2.html">HOME Version 2</a></li>
+												<li><a class="roboto" href="home-3.html">HOME Version 3</a></li>
+											</ul>
+										</li>
+										<li><a class="roboto whiteTxtColor" href="home-1.html">ABOUT</a></li>
+										<li><a class="roboto whiteTxtColor" href="demo.html">DEMO</a></li>
+										<li><a class="roboto whiteTxtColor" href="app-store.html">FEATURES</a></li>
+										<!-- <li><a class="roboto whiteTxtColor" href="app-details.html">REVIEWS</a></li> -->
+										<li><a class="roboto whiteTxtColor" href="home-1.html">SCREENS</a></li>
+										<!-- <li><a class="roboto whiteTxtColor" href="blog.html">BLOG</a></li> -->
+										<li><a class="roboto whiteTxtColor" href="home-1.html">SUPPORT</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>	
-		</div>	
-	</div>
-</section>	<!-- /.CONTACT SECTION-->													
-<!-- Script Begins -->
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<!-- Bootstrap -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- Bootstrap Validator-->
-<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
-<!-- Google-map-->
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<!--Sticky and Easing js-->
-<script src="js/jquery.easing.min.js" type="text/javascript"></script>
-<!--Sticky js-->
-<script src="js/jquery.sticky.js" type="text/javascript"></script>
-<!--Parallax-->
-<script src="js/jquery.parallax-1.1.3.js"></script>
-<script src="js/parallax-bg.js"></script>
-<!--Isotope js-->
-<script src="js/isotope.pkgd.min.js" type="text/javascript"></script>
-<!-- Appear js -->
-<script src="js/jquery.appear.js" type="text/javascript"></script>
-<!-- Owl Carousel -->
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<!--Counter js-->
-<script src="js/jquery.countTo.js" type="text/javascript"></script>
-<!--Pretty photo-->
-<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
-<!--Retina Js-->
-<script src="js/retina.js" type="text/javascript"></script>
-<!-- Bg Slider -->
-<script type="text/javascript" src="js/jquery.superslides.js"></script>
-<!-- Typed Js -->
-<script type="text/javascript" src="js/typed.js"></script>
-<!-- Video Bg -->
-<script type="text/javascript" src="js/jquery.mb.YTPlayer.min.js"></script>
-<!-- Custom Js -->
-<script type="text/javascript" src="js/custom.js"></script>
-<!-- /.Script Ends -->
+				<div class="header-bottom row">
+					<div class="col-lg-12">
+						<div class="header-left">
+							<h1 class="header-title ralewaySemiBold whiteTxtColor">Test your oracle data pipeline before writing any code!</h1>
+							<span class="header-subtitle_small roboto whiteTxtColor">Oracle Sandbox allows dApp builders to draft out how their off-chain will flow in.</span>
+							<span class="header-subtitle_bold robotoMedium whiteTxtColor">Architecture and it's Security</span>	
+							<div class="video-conatiner">
+								<a class="video-image playVideo" href="http://www.youtube.com/watch?v=_NIsv0aHbOw" data-toggle="lightbox" data-title="Intro Video">
+									<img src="media/home/6.jpg" alt="Video">
+									<span><i class="fa fa-play customColor"></i></span>
+								</a>
+								<a class="video-text playVideo robotoLight whiteTxtColor" href="http://www.youtube.com/watch?v=_NIsv0aHbOw" data-toggle="lightbox" data-title="Intro Video">Watch the Intro Video</a>
+							</div>
+						</div>
+						<div class="header-right">
+							<img class="wow fadeInRight" data-wow-delay="3.3s" src="media/home/1.png" alt="Phones">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- <section id="getForFree" class="pageRow straight">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2 class="title_bold text-center ralewaySemiBold wow zoomIn blackTxtColor" data-wow-delay="0.3s">GET IT FOR FREE</h2>
+						<span class="subtitle text-center robotoLight col-lg-12 col-md-12 col-sm-12 col-xs-12 wow zoomIn" data-wow-delay="0.3s">Choose your native platform and download the app FREE!</span>
+						<div class="clearfix"></div>
+						<ul class="store-buttons center-block clearfix arrowGetFree">
+							<li class="pull-left wow fadeInLeft" data-wow-delay="0.3s">
+								<a href="#" class="ellipseBtn bigBtn whiteBtn hvr-pop">
+									<span>
+										<i class="fa-custom-google-play"></i>
+										Google Play
+									</span>
+								</a>
+							</li>
+							<li class="pull-right wow fadeInRight" data-wow-delay="0.3s">
+								<a href="#" class="ellipseBtn bigBtn colorBtn hvr-pop">
+									<span>
+										<i class="fa fa-apple"></i>
+										iOS App Store
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>			
+		</section> -->
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<!-- Demo Section -->
+		<section id="demo" class="pageRow">
+			<h3 class="sectionTitle text-center ralewayLight balck">The Demo</h3>
+			<ul class="featuresList pull-left col-lg-12">
+			
+			<div id="demoDiv" style="text-align: center">
+				<canvas id='mycanvas' width='1024' height='720' style='border: 1px solid'></canvas>
+			</div>
+		</section>
 
-  ga('create', 'UA-66069731-1', 'auto');
-  ga('send', 'pageview');
+		<section id="amazingFeatures" class="pageRow straight graySection">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-lg-12">
+						<h3 class="sectionTitle text-center ralewayLight balck">Some Amazing Features</h3>
+						<ul class="featuresList pull-left col-lg-12">
+							<li class="col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
+								<div class="feature-item text-center clearfix hvr-pop">
+									<div class="circle bigCircle center-block">
+										<span><i class="fa fa-laptop customColor"></i></span>
+									</div>
+									<span class="feature-item_title text-uppercase text-center ralewaySemiBold col-lg-12 col-md-12 col-sm-12 col-xs-12 blackTxtColor">RESPONSIVE DESIGN</span>
+									<span class="feature-item_desc text-center robotoLight col-lg-12 col-md-12 col-sm-12 col-xs-12">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+								</div>
+							</li>
+							<li class="col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.3s">
+								<div class="feature-item text-center clearfix hvr-pop">
+									<div class="circle bigCircle center-block">
+										<span><i class="fa fa-flask customColor"></i></span>
+									</div>
+									<span class="feature-item_title text-uppercase text-center ralewaySemiBold col-lg-12 col-md-12 col-sm-12 col-xs-12 blackTxtColor">EASY TO CUSTOMIZE</span>
+									<span class="feature-item_desc text-center robotoLight col-lg-12 col-md-12 col-sm-12 col-xs-12">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+								</div>
+							</li>
+							<li class="col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.3s">
+								<div class="feature-item text-center clearfix hvr-pop">
+									<div class="circle bigCircle center-block">
+										<span><i class="fa fa-plane customColor"></i></span>
+									</div>
+									<span class="feature-item_title text-uppercase text-center ralewaySemiBold col-lg-12 col-md-12 col-sm-12 col-xs-12 blackTxtColor">PERFECT SHOWCASE</span>
+									<span class="feature-item_desc text-center robotoLight col-lg-12 col-md-12 col-sm-12 col-xs-12">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+								</div>
+							</li>
+							<li class="col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
+								<div class="feature-item text-center clearfix hvr-pop">
+									<div class="circle bigCircle center-block">
+										<span><i class="fa fa-cog customColor"></i></span>
+									</div>
+									<span class="feature-item_title text-uppercase text-center ralewaySemiBold col-lg-12 col-md-12 col-sm-12 col-xs-12 blackTxtColor">APP STORE SUPPORT</span>
+									<span class="feature-item_desc text-center robotoLight col-lg-12 col-md-12 col-sm-12 col-xs-12">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+								</div>
+							</li>							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- <section id="new" class="pageRow paralax straight-bottom customBgColor trianglifyBox">
+			<div class="wrapper">
+				<div class="downloadConainer row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 clearfix">
+						<a href="app-details.html" class="ellipseBtn smallBtn customWhiteBtn hvr-pop pull-left clear">
+							<span class="text-uppercase">new</span>
+						</a>
+						<h3 class="sectionName ralewaySemiBold pull-left whiteTxtColor clear">Live conference support available</h3>
+						<div class="sectionDesc robotoLight whiteTxtColor pull-left clear">Eleifend morbi orci velit porttitor sed imperdiet ac ullamcorper Fusce eget tortor vel magna iaculis convallis. Aeneaneros vitae metus pellentesque tincidunt.Cum sociis natoque penatibus et magnis dis parturient montes.</div>
+						<div class="downloadBox pull-left clear arrowFreeDownload">
+							<span class="downloadBox-text robotoCondensed whiteTxtColor pull-left">Free Download On</span>
+							<span class="downloadBox-appbox robotoCondensedBold whiteTxtColor pull-left text-center">
+								<i class="fa fa-android"></i>
+								ANDROID
+							</span>
+							<span class="downloadBox-appbox robotoCondensedBold whiteTxtColor pull-left text-center">
+								<i class="fa fa-apple"></i>
+								iOS
+							</span>
+						</div>
+					</div>
+					<div class="posterBox col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<img class="wow fadeInRight" src="media/home/2.png" alt="Poster" data-wow-delay="0.3s">
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<section id="choose" class="pageRow straight-bottom">
+			<div class="wrapper">
+				<div class="chooseApp row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+						<h3 class="sectionTitle text-center ralewayLight balck">Why Choose AppBox</h3>
+						<div class="row">
+							<div class="optionsBox col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+								<div class="centerPhone col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+									<img class="wow bounceIn" src="media/home/3.png" alt="Phone" data-wow-delay="0.3s">
+								</div>
+								<ul class="optionsList pageRow">
+									<li class="pull-left col-lg-4 col-md-4 col-sm-4 col-xs-12">
+										<div class="options-item wow fadeInLeft" data-wow-delay="0.3s">
+											<div class="circle smallCircle">
+												<span><i class="fa fa-cubes customColor"></i></span>
+											</div>
+											<h4 class="options-name ralewaySemiBold text-uppercase text-right blackTxtColor">APP STORE</h4>
+											<span class="options-desc robotoLight text-right">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+											<span class="option-dots"></span>
+										</div>
+									</li>
+									<li class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-12">
+										<div class="options-item wow fadeInRight" data-wow-delay="0.3s">
+											<div class="circle smallCircle">
+												<span><i class="fa fa-flag customColor"></i></span>
+											</div>
+											<h4 class="options-name ralewaySemiBold text-uppercase text-left blackTxtColor">MULTIPURPOSE LAYOUT</h4>
+											<span class="options-desc robotoLight text-left">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+											<span class="option-dots"></span>
+										</div>
+									</li>
+									<li class="pull-left col-lg-4 col-md-4 col-sm-4 col-xs-12 clear">
+										<div class="options-item wow fadeInLeft" data-wow-delay="0.3s">
+											<div class="circle smallCircle">
+												<span><i class="fa fa-desktop customColor"></i></span>
+											</div>
+											<h4 class="options-name ralewaySemiBold text-uppercase text-right blackTxtColor">RETINA READY</h4>
+											<span class="options-desc robotoLight text-right">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+											<span class="option-dots"></span>
+										</div>
+									</li>
+									<li class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-12">
+										<div class="options-item wow fadeInRight" data-wow-delay="0.3s">
+											<div class="circle smallCircle">
+												<span><i class="fa fa-comment customColor"></i></span>
+											</div>
+											<h4 class="options-name ralewaySemiBold text-uppercase text-left blackTxtColor">LIVE CHAT SUPPORT</h4>
+											<span class="options-desc robotoLight text-left">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+											<span class="option-dots"></span>
+										</div>
+									</li>
+									<li class="pull-left col-lg-4 col-md-4 col-sm-4 col-xs-12 clear">
+										<div class="options-item wow fadeInLeft" data-wow-delay="0.3s">
+											<div class="circle smallCircle">
+												<span><i class="fa fa-apple customColor"></i></span>
+											</div>
+											<h4 class="options-name ralewaySemiBold text-uppercase text-right blackTxtColor">PREMIUM SUPPORT</h4>
+											<span class="options-desc robotoLight text-right">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+										</div>
+									</li>
+									<li class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-12">
+										<div class="options-item wow fadeInRight" data-wow-delay="0.3s">
+											<div class="circle smallCircle">
+												<span><i class="fa fa-coffee customColor"></i></span>
+											</div>
+											<h4 class="options-name ralewaySemiBold text-uppercase text-left blackTxtColor">AND MANY MORE </h4>
+											<span class="options-desc robotoLight text-left">Eleifend morbi velit porttitor sed ipsum imperdiet ac ullamcorper fusce</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- <section id="reviews" class="pageRow full-width-slider-controls paralax customBgColor straight-top trianglifyBox">
+			<div class="wrapper">
+				<div class="reviewsContainer row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix staticBox">
+						<div class="bottom-bracket whiteTxtColor circleBox center-block text-center"><i class="fa fa-quote-right"></i></div>
+						<h3 class="reviews-title whiteTxtColor raleway text-center reviewsArrow">App Reviews</h3>
+						<span class="reviews-subtitle robotoLight whiteTxtColor text-center">Read What Our Happy Customers Are Saying</span>
+						<div id="owl-reviews" class="owl-carousel white-control review-full-width staticBox">
+							<div class="review-item">
+								<div class="review-slide">
+									<div class="review-slide_text whiteTxtColor robotoItalic text-center">Eleifend morbi orci velit porttitor sed imperdiet ac ullamcorper Fusce eget tortor vel magna iaculis convallis. Aeneaneros vitae metus pellentesque tincidunt.Cum sociis natoque penatibus et magnis dis parturient montes turpis donec tincidunt tellus.</div>
+									<div class="review-slide_autor center-block">
+										<div class="review-slide_autor-ava circleBox wow rotateIn" data-wow-delay="0.3s">
+											<img src="media/54x54/1.jpg" alt="User Ava">
+										</div>
+										<div class="review-slide_autor-name whiteTxtColor robotoCondensed">Oscar Mendis</div>
+										<div class="review-slide_autor-post whiteTxtColor roboto">Director: BoxApp Media Inc.</div>										
+									</div>
+								</div>
+							</div>
+							<div class="review-item">
+								<div class="review-slide">
+									<div class="review-slide_text whiteTxtColor robotoItalic text-center">Eleifend morbi orci velit porttitor sed imperdiet ac ullamcorper Fusce eget tortor vel magna iaculis convallis. Aeneaneros vitae metus pellentesque tincidunt.Cum sociis natoque penatibus et magnis dis parturient montes turpis donec tincidunt tellus.</div>
+									<div class="review-slide_autor center-block">
+										<div class="review-slide_autor-ava circleBox wow rotateIn" data-wow-delay="0.3s">
+											<img src="media/54x54/1.jpg" alt="User Ava">
+										</div>
+										<div class="review-slide_autor-name whiteTxtColor robotoCondensed">Oscar Mendis</div>
+										<div class="review-slide_autor-post whiteTxtColor roboto">Director: BoxApp Media Inc.</div>										
+									</div>
+								</div>
+							</div>
+							<div class="review-item">
+								<div class="review-slide">
+									<div class="review-slide_text whiteTxtColor robotoItalic text-center">Eleifend morbi orci velit porttitor sed imperdiet ac ullamcorper Fusce eget tortor vel magna iaculis convallis. Aeneaneros vitae metus pellentesque tincidunt.Cum sociis natoque penatibus et magnis dis parturient montes turpis donec tincidunt tellus.</div>
+									<div class="review-slide_autor center-block">
+										<div class="review-slide_autor-ava circleBox wow rotateIn" data-wow-delay="0.3s">
+											<img src="media/54x54/1.jpg" alt="User Ava">
+										</div>
+										<div class="review-slide_autor-name whiteTxtColor robotoCondensed">Oscar Mendis</div>
+										<div class="review-slide_autor-post whiteTxtColor roboto">Director: BoxApp Media Inc.</div>										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<section id="screenshots-title" class="pageRow">
+			<div class="wrapper">
+				<div class="screenshotsTitBox row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+						<h3 class="sectionTitle text-center ralewayLight balck">AppBox Screenshots</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="pageRow">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+						<div id="owl-screenshots" class="owl-carousel phone-slider">
+							<div class="screenshot-item wow fadeInLeft" data-wow-delay="0.3s">
+								<img src="media/260x455/1.jpg" alt="Screenshot">
+							</div>
+							<div class="screenshot-item wow fadeInUp" data-wow-delay="0.3s">
+								<img src="media/260x455/2.jpg" alt="Screenshot">
+							</div>
+							<div class="screenshot-item wow fadeInRight" data-wow-delay="0.3s">
+								<img src="media/260x455/3.jpg" alt="Screenshot">
+							</div>
+							<div class="screenshot-item">
+								<img src="media/260x455/1.jpg" alt="Screenshot">
+							</div>
+							<div class="screenshot-item">
+								<img src="media/260x455/2.jpg" alt="Screenshot">
+							</div>
+							<div class="screenshot-item">
+								<img src="media/260x455/3.jpg" alt="Screenshot">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- <section id="moreApps" class="pageRow full-width-slider-controls straight-bottom paralax customBgColor trianglifyBox">
+			<div class="wrapper">
+				<div class="moreAppsBox row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 staticBox clearfix">
+						<h3 class="sectionTitle white text-center ralewayLight">More Apps By AppBox</h3>
+						<div id="owl-apps" class="owl-carousel white-control apps-slider staticBox">
+							<div class="app-item wow fadeInLeft" data-wow-delay="0.3s">
+								<div class="preview-item center-block">
+									<div class="preview-item_header">
+										<img src="media/270x300/1.jpg" alt="App">
+										<div class="preview-item_hover whiteTxtColor robotoLight">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis etu nostrud exercitation ullamco laboris</div>
+									</div>
+									<div class="preview-item_body">
+										<h4 class="preview-item_title">
+											<a href="app-details.html" class="ralewaySemiBold blackTxtColor">Sports iPhone App</a>
+										</h4>
+										<ul class="rating">
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+										</ul>
+										<div class="preview-item_pricebox clear">
+											<span class="preview-item_price robotoCondensed blackTxtColor">$5.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="app-item wow fadeInUp" data-wow-delay="0.3s">
+								<div class="preview-item center-block">
+									<div class="preview-item_header">
+										<img src="media/270x300/2.jpg" alt="App">
+										<div class="preview-item_hover whiteTxtColor robotoLight">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis etu nostrud exercitation ullamco laboris</div>
+									</div>
+									<div class="preview-item_body">
+										<h4 class="preview-item_title">
+											<a href="app-details.html" class="ralewaySemiBold blackTxtColor">Kareer Mobile App</a>
+										</h4>
+										<ul class="rating">
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+										</ul>
+										<div class="preview-item_pricebox clear">
+											<span class="preview-item_price robotoCondensed blackTxtColor">Free</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="app-item wow fadeInUp" data-wow-delay="0.3s">
+								<div class="preview-item center-block">
+									<div class="preview-item_header">
+										<img src="media/270x300/3.jpg" alt="App">
+										<div class="preview-item_hover whiteTxtColor robotoLight">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis etu nostrud exercitation ullamco laboris</div>
+									</div>
+									<div class="preview-item_body">
+										<h4 class="preview-item_title">
+											<a href="app-details.html" class="ralewaySemiBold blackTxtColor">Weather App</a>
+										</h4>
+										<ul class="rating">
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+										</ul>
+										<div class="preview-item_pricebox clear">
+											<span class="preview-item_price robotoCondensed blackTxtColor">$5.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="app-item wow fadeInRight" data-wow-delay="0.3s">
+								<div class="preview-item center-block">
+									<div class="preview-item_header">
+										<img src="media/270x300/4.jpg" alt="App">
+										<div class="preview-item_hover whiteTxtColor robotoLight">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis etu nostrud exercitation ullamco laboris</div>
+									</div>
+									<div class="preview-item_body">
+										<h4 class="preview-item_title">
+											<a href="app-details.html" class="ralewaySemiBold blackTxtColor">Mobile Coach</a>
+										</h4>
+										<ul class="rating">
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+										</ul>
+										<div class="preview-item_pricebox clear">
+											<span class="preview-item_price through robotoCondensed blackTxtColor">$5.00</span>
+											<span class="preview-item_price robotoCondensed blackTxtColor">Free</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="app-item">
+								<div class="preview-item center-block">
+									<div class="preview-item_header">
+										<img src="media/270x300/1.jpg" alt="App">
+										<div class="preview-item_hover whiteTxtColor robotoLight">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis etu nostrud exercitation ullamco laboris</div>
+									</div>
+									<div class="preview-item_body">
+										<h4 class="preview-item_title">
+											<a href="app-details.html" class="ralewaySemiBold blackTxtColor">Sports iPhone App</a>
+										</h4>
+										<ul class="rating">
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+										</ul>
+										<div class="preview-item_pricebox clear">
+											<span class="preview-item_price through robotoCondensed blackTxtColor">$5.00</span>
+											<span class="preview-item_price robotoCondensed blackTxtColor">Free</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="app-item">
+								<div class="preview-item center-block">
+									<div class="preview-item_header">
+										<img src="media/270x300/2.jpg" alt="App">
+										<div class="preview-item_hover whiteTxtColor robotoLight">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis etu nostrud exercitation ullamco laboris</div>
+									</div>
+									<div class="preview-item_body">
+										<h4 class="preview-item_title">
+											<a href="app-details.html" class="ralewaySemiBold blackTxtColor">Sports iPhone App</a>
+										</h4>
+										<ul class="rating">
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li class="active"><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+										</ul>
+										<div class="preview-item_pricebox clear">
+											<span class="preview-item_price through robotoCondensed blackTxtColor">$5.00</span>
+											<span class="preview-item_price robotoCondensed blackTxtColor">Free</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<!-- <section id="downloadApp" class="pageRow">
+			<div class="wrapper">
+				<div class="downloadAppBox row">
+					<div class="phonesImgBox col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix">
+						<img class="wow fadeInLeft" data-wow-delay="0.3s" src="media/home/4.png" alt="Phones">
+					</div>
+					<div class="downloadContainer col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix">
+						<h4 class="download-title ralewayLight blackTxtColor"><span class="ralewayMedium">Download</span> Our App</h4>
+						<span class="download-subtitle robotoLight">Choose your native platform and download the app FREE!</span>
+						<ul class="store-buttons center-block clearfix">
+							<li class="pull-left wow fadeInRight" data-wow-delay="0.3s">
+								<a href="#" class="ellipseBtn bigBtn whiteBtn hvr-pop">
+									<span>
+										<i class="fa-custom-google-play"></i>
+										Google Play
+									</span>
+								</a>
+							</li>
+							<li class="pull-right wow fadeInRight" data-wow-delay="0.3s">
+								<a href="#" class="ellipseBtn bigBtn colorBtn hvr-pop">
+									<span>
+										<i class="fa fa-apple"></i>
+										iOS App Store
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<!-- <section id="subscribe" class="pageRow subscribeNewsletter straight-bottom graySection">
+			<div class="wrapper">
+				<div class="subscribeBox row">
+					<div class="subscribeContainer col-lg-7 col-md-7 col-sm-12 col-xs-12 pull-right clearfix">
+						<h4 class="subscribe-title ralewaySemiBold">Subscribe To Newsletter</h4>
+						<div class="subscribeFormBox pull-left clear">
+							<div id="mc_embed_signup" class="mailchimp-form">
+								<form action="//templines.us9.list-manage.com/subscribe/post?u=fe9a9cfcf8d73763bcc53f206&amp;id=319cafcc43" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+									<div id="mc_embed_signup_scroll">
+										<div class="mc-field-group mailchimp-form_field">
+											<input type="email" class="subscribe-field robotoLight" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter your email address">
+										</div>
+										<div id="mce-responses" class="clear">
+											<div class="response" id="mce-error-response" style="display:none"></div>
+											<div class="response" id="mce-success-response" style="display:none"></div>
+										</div>
+										<div style="position: absolute; left: -5000px;">
+											<input type="text" name="b_fe9a9cfcf8d73763bcc53f206_319cafcc43" tabindex="-1" value="">
+										</div>
+										<div class="clear">
+											<button type="submit" class="mailchimp-form_btn ellipseSubmitBtn whiteTxtColor smallBtn robotoMedium customBgColor hvr-pop pull-right" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">submit</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<!-- <section id="discountedPricing" class="pageRow">
+			<div class="wrapper">
+				<div class="discountBox row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+						<h3 class="sectionTitle text-center ralewayLight balck">Discounted Pricing</h3>
+						<span class="smallText text-center robotoLight">Nullam id odio quis risus placerat aliquam. Cum sociis natoque penatibus et magnis dis part <br>urient montes nascetur ridiculus mus curabitur tellus lacus.</span>
+						<ul class="package-list">
+							<li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<div class="package-item center-block wow fadeInLeft" data-wow-delay="0.3s">
+									<div class="package-header ralewaySemiBold text-center blackTxtColor">
+										Standard Package
+										<div class="circle middleCircle center-block">
+											<span class="robotoLight">
+												<b class="robotoCondensedBold customColor">$11</b>
+												per month
+											</span>
+										</div>
+									</div>
+									<div class="package-body text-center">
+										<ul class="package-options">
+											<li class="robotoLight text-center">Unlimited support</li>
+											<li class="robotoLight text-center">Easy & Fast Customization</li>
+											<li class="robotoLight text-center">Unlimited Color possible</li>
+											<li class="robotoLight text-center">Free PSD Template</li>
+											<li class="robotoLight text-center">Lifetime Updates</li>
+										</ul>
+										<a href="app-details.html" class="ellipseLink middleLink center-block robotoMedium text-uppercase blackTxtColor text-center hvr-pop">BUY NOW</a>
+									</div>
+								</div>
+							</li>
+							<li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<div class="package-item center-block best wow fadeInUp" data-wow-delay="0.3s">
+									<div class="package-header ralewaySemiBold text-center whiteTxtColor">
+										Professional Package
+										<div class="circle middleCircle center-block">
+											<span class="whiteTxtColor">
+												<b class="robotoCondensedBold whiteTxtColor">$25</b>
+												per month
+											</span>
+										</div>
+									</div>
+									<div class="package-body text-center">
+										<ul class="package-options">
+											<li class="robotoLight text-center">Unlimited support</li>
+											<li class="robotoLight text-center">Easy & Fast Customization</li>
+											<li class="robotoLight text-center">Unlimited Color possible</li>
+											<li class="robotoLight text-center">Free PSD Template</li>
+											<li class="robotoLight text-center">Lifetime Updates</li>
+										</ul>
+										<a href="app-details.html" class="ellipseLink middleLink center-block robotoMedium whiteTxtColor text-uppercase text-center hvr-pop">BUY NOW</a>
+									</div>
+								</div>
+							</li>
+							<li class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<div class="package-item center-block wow fadeInRight" data-wow-delay="0.3s">
+									<div class="package-header ralewaySemiBold text-center blackTxtColor">
+										Corporate Package
+										<div class="circle middleCircle center-block">
+											<span>
+												<b class="robotoCondensedBold customColor">$39</b>
+												per month
+											</span>
+										</div>
+									</div>
+									<div class="package-body text-center">
+										<ul class="package-options">
+											<li class="robotoLight text-center">Unlimited support</li>
+											<li class="robotoLight text-center">Easy & Fast Customization</li>
+											<li class="robotoLight text-center">Unlimited Color possible</li>
+											<li class="robotoLight text-center">Free PSD Template</li>
+											<li class="robotoLight text-center">Lifetime Updates</li>
+										</ul>
+										<a href="app-details.html" class="ellipseLink middleLink center-block robotoMedium blackTxtColor text-uppercase text-center hvr-pop">BUY NOW</a>
+									</div>
+								</div>
+							</li>							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<section id="teamMembers" class="pageRow paralax full-width-slider-controls straight customBgColor trianglifyBox">
+			<div class="wrapper">
+				<div class="teamMembersBox row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix staticBox">
+						<h3 class="reviews-title whiteTxtColor raleway text-center membersArrow">Team Members</h3>
+						<span class="reviews-subtitle robotoLight whiteTxtColor text-center">The ETHonline Hackathon Team</span>
+						<div id="owl-members" class="owl-carousel white-control member-full-width staticBox">
+							<div class="member-item center-block">
+								<div class="member-ava circleBox center-block wow rotateIn" data-wow-delay="0.3s">
+									<img src="media/124x124/1.png" alt="Member">
+								</div>
+								<div class="member-name robotoCondensed whiteTxtColor text-center">Edgar Navarro</div>
+								<div class="member-specialty roboto whiteTxtColor text-center">UI/UX Design</div>
+							</div>
+							<div class="member-item center-block">
+								<div class="member-ava circleBox center-block wow rotateIn" data-wow-delay="0.3s">
+									<img src="media/124x124/2.png" alt="Member">
+								</div>
+								<div class="member-name robotoCondensed whiteTxtColor text-center">Logan King</div>
+								<div class="member-specialty roboto whiteTxtColor text-center">Backend Development</div>
+							</div>
+							<div class="member-item center-block">
+								<div class="member-ava circleBox center-block wow rotateIn" data-wow-delay="0.3s">
+									<img src="media/124x124/3.png" alt="Member">
+								</div>
+								<div class="member-name robotoCondensed whiteTxtColor text-center">Shelton King</div>
+								<div class="member-specialty roboto whiteTxtColor text-center">Backend Development</div>
+							</div>
+							<div class="member-item center-block">
+								<div class="member-ava circleBox center-block wow rotateIn" data-wow-delay="0.3s">
+									<img src="media/124x124/4.png" alt="Member">
+								</div>
+								<div class="member-name robotoCondensed whiteTxtColor text-center">Vincenz Buhler</div>
+								<div class="member-specialty roboto whiteTxtColor text-center">Front End Development</div>
+							</div>
+							<!-- <div class="member-item center-block">
+								<div class="member-ava circleBox center-block wow rotateIn" data-wow-delay="0.3s">
+									<img src="media/124x124/5.png" alt="Member">
+								</div>
+								<div class="member-name robotoCondensed whiteTxtColor text-center">Tom Hasman</div>
+								<div class="member-specialty roboto whiteTxtColor text-center">Beta Tester</div>
+							</div> -->
+							<!-- <div class="member-item center-block">
+								<div class="member-ava circleBox center-block wow rotateIn" data-wow-delay="0.3s">
+									<img src="media/124x124/6.png" alt="Member">
+								</div>
+								<div class="member-name robotoCondensed whiteTxtColor text-center">Liza Camron</div>
+								<div class="member-specialty roboto whiteTxtColor text-center">Developer</div>
+							</div> -->
+							<!-- <div class="member-item center-block">
+								<div class="member-ava circleBox center-block wow rotateIn" data-wow-delay="0.3s">
+									<img src="media/124x124/4.png" alt="Member">
+								</div>
+								<div class="member-name robotoCondensed whiteTxtColor text-center">Oscar Mendis</div>
+								<div class="member-specialty roboto whiteTxtColor text-center">Developer</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- <section id="featured" class="pageRow straight-bottom graySection">
+			<div class="wrapper">
+				<div class="featuredBox row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+						<h3 class="sectionTitle text-center ralewayLight balck">AppBox Featured In ...</h3>
+						<ul class="featured-list">
+							<li><img class="wow zoomIn" data-wow-delay="0.3s" src="media/featured/1.png" alt="Logo 1"></li>
+							<li><img class="wow zoomIn" data-wow-delay="0.3s" src="media/featured/2.png" alt="Logo 2"></li>
+							<li><img class="wow zoomIn" data-wow-delay="0.3s" src="media/featured/3.png" alt="Logo 3"></li>
+							<li><img class="wow zoomIn" data-wow-delay="0.3s" src="media/featured/4.png" alt="Logo 4"></li>
+							<li><img class="wow zoomIn" data-wow-delay="0.3s" src="media/featured/5.png" alt="Logo 5"></li>
+							<li><img class="wow zoomIn" data-wow-delay="0.3s" src="media/featured/6.png" alt="Logo 6"></li>
+							<li><img class="wow zoomIn" data-wow-delay="0.3s" src="media/featured/7.png" alt="Logo 7"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<!-- <section id="support" class="pageRow straight">
+			<div class="wrapper">
+				<div class="supportBox row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+						<h3 class="sectionTitle text-center ralewayLight balck">App Support</h3>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 clearfix">
+							<div class="support-item clearfix wow fadeInLeft" data-wow-delay="0.3s">
+								<div class="circle smallCircle">
+									<span><i class="fa fa-map-marker customColor"></i></span>
+								</div>
+								<h4 class="support-item_name ralewaySemiBold blackTxtColor">Address</h4>
+								<div class="support-item_info robotoLight">121 King Street, Melbourne Victoria, Australia 3000</div>
+							</div>
+							<div class="support-item clearfix wow fadeInLeft" data-wow-delay="0.3s">
+								<div class="circle smallCircle">
+									<span><i class="fa fa-phone customColor"></i></span>
+								</div>
+								<h4 class="support-item_name ralewaySemiBold blackTxtColor">Free Helpline</h4>
+								<div class="support-item_info robotoLight">
+									(001) 800 345 333700<br>
+									(002) 600 345 333700
+								</div>
+							</div>
+							<div class="support-item clearfix wow fadeInLeft" data-wow-delay="0.3s">
+								<div class="circle smallCircle">
+									<span><i class="fa fa-envelope customColor"></i></span>
+								</div>
+								<h4 class="support-item_name ralewaySemiBold blackTxtColor">Email</h4>
+								<div class="support-item_info robotoLight">
+									<a href="mailto:info@appbox.com">info@appbox.com</a>
+									<a href="mailto:info@appbox.com">feedback@appbox.com</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 clearfix">
+							<div class="support-desc robotoLight">Nullam id odio quis risus placerat aliquam. Cum sociis natoque penatibus et magnis dis part urient montes nascetur ridiculus mus curabitur tellus lacus.</div>
+							<div class="support-formbox clearfix wow fadeInRight" data-wow-delay="0.3s">
+								<div id="success"></div>
+								<form novalidate id="contactForm" class="support-form form-inline" name="sentMessage">
+									<div class="form-group half-wigth pull-left">
+										<label class="sr-only" for="user-name">Full Name</label>
+										<input type="text" data-validation-required-message="Please enter your full name." required class="lineField robotoLight" id="user-name" placeholder="Full Name *">
+										<p class="help-block text-danger"></p>
+									</div>
+									<div class="form-group half-wigth pull-right">
+										<label class="sr-only" for="user-email">Email</label>
+										<input type="email" data-validation-required-message="Please enter your email address." required class="lineField robotoLight" id="user-email" placeholder="Email *">
+										<p class="help-block text-danger"></p>
+									</div>
+									<div class="form-group full-width pull-left">
+										<label class="sr-only" for="user-message">Message</label>
+										<textarea data-validation-required-message="Please enter a message." required class="lineField robotoLight" id="user-message" placeholder="Message"></textarea>
+										<p class="help-block text-danger"></p>
+									</div>
+									<button type="submit" class="ellipseSubmitBtn whiteTxtColor smallBtn robotoMedium customBgColor hvr-pop pull-left clear">Send</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		 -->
+		<footer id="footer" class="pageRow customBgColor straight">
+			<a id="scrollTop" href="#" class="goToTop whiteTxtColor"><i class="fa fa-angle-up"></i></a>
+			<div class="wrapper">
+				<div class="footerBox row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+						<a href="." class="footer-logo center-block wow bounceIn" data-wow-delay="0.3s">
+							<img  src="./../" alt="Logo">
+						</a>
+						<!-- <div class="copyrightTxt robotoLight whiteTxtColor text-center wow bounceIn" data-wow-delay="0.3s">Copyright &copy; 2015. Designed by Templines</div> -->
+						<ul class="socialmenu text-center wow bounceIn" data-wow-delay="0.5s">
+							<li><a href="#" target="_blank" class="whiteTxtColor hvr-pop"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" target="_blank" class="whiteTxtColor hvr-pop"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank" class="whiteTxtColor hvr-pop"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#" target="_blank" class="whiteTxtColor hvr-pop"><i class="fa fa-pinterest-p"></i></a></li>
+							<li><a href="#" target="_blank" class="whiteTxtColor hvr-pop"><i class="fa fa-behance"></i></a></li>
+							<li><a href="#" target="_blank" class="whiteTxtColor hvr-pop"><i class="fa fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		</div>
 
-</script>
-
-</body>
+		<script src="js/jquery.placeholder.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/smoothscroll.min.js"></script>
+		<!-- Loader -->
+		<script src="plugins/loader/js/classie.js"></script>
+		<script src="plugins/loader/js/pathLoader.js"></script>
+		<script src="plugins/loader/js/main.js"></script>
+		<script src="js/classie.js"></script>
+		<!--Owl Carousel-->
+	    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
+	    <!--Ekko Lightbox-->
+	    <script src="plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+        <!--Contact form--> 
+        <script src="plugins/contact/jqBootstrapValidation.js"></script> 
+        <script src="plugins/contact/contact_me.js"></script>
+		<!--THEME--> 
+		<script src="js/wow.min.js"></script>
+		<script src="js/cssua.min.js"></script>
+        <script src="js/func.js"></script> 
+	</body>
 </html>
