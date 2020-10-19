@@ -13,5 +13,4 @@ graph.add(node_watch);
 
 node_const.connect(0, node_watch, 0 );
 
-console.log("Starting graph");
 graph.start()
