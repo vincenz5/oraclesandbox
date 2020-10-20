@@ -6,7 +6,7 @@ Version:	1.1
 Author:	    Andrey Sokoltsov
 Profile:	http://themeforest.net/user/andreysokoltsov
 -------------------------------------------------------------------*/
-
+/* html,body { height: 100%; } */
 /* MAIN CSS */
 @import url('bootstrap.min.css');
 @import url('theme.css');
