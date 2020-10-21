@@ -24,6 +24,72 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/modernizr.custom.js"></script>
 
+	<style>
+		#demoBox {
+			width: 100%;
+		}
+
+		#moduleBox {
+			height: 540px;
+			background-color:#a7b1d4;
+			border-radius: 10px;
+			width: 20%;
+			float: left;
+		}
+
+		#moduleSpace {
+			padding: 0 14px;
+		}
+
+		#moduleTitle {
+			height: 50px;
+			width: 100%;
+			background-color: #191932;
+			padding: 15px 0;
+			margin-bottom: 20px;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+
+		h3 {
+			text-align: center;
+			color: white;
+			margin-top: 0;
+		}
+
+		#demoDiv {
+			text-align: center;
+			width: 70%;
+			display: block;
+			margin: 0 auto;
+		}
+
+		#gradeBox {
+			float: right;
+			width: 10%;
+		}
+
+		#newAPIMod {
+			margin-top: 2rem;
+		}
+
+		.moduleButton {
+			background-color: 2485FF;
+
+		}
+
+		#oracleDropdown {
+			margin-top: 20px;
+			margin-left: 14px;
+		}
+
+		/* #mycanvas {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    padding-top: 18rem;
+} */
+	</style>
 </head>
 
 <body class="animated-css">
@@ -71,7 +137,7 @@
 			</div>
 
 			<script src="plugins/switcher/js/bootstrap-select.js"></script>
-			<script src="plugins/switcher/js/evol.colorpicker.min.js" type="text/javascript"></script>
+			<!-- <script src="plugins/switcher/js/evol.colorpicker.min.js" type="text/javascript"></script> -->
 			<script src="plugins/switcher/js/dmss.js"></script>
 		</div>
 		<!-- End Switcher -->
@@ -81,7 +147,9 @@
 				<div class="header-outer">
 					<div class="header-inner">
 						<div class="header-top row">
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a href="." class="logo"></a></div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+								<a href="." class="logo"></a>
+							</div>
 							<div class="col-lg-9 col-md-9 col-sm-6 col-xs-6">
 								<i class="fa fa-bars mobileMenuNav whiteTxtColor"></i>
 								<nav class="nav-container customBgColor">
@@ -95,21 +163,41 @@
 												</div>
 												<button type="submit" class="hidden">Search</button>
 											</form>
-											<a class="iconSearch roboto whiteTxtColor" href="#"><i class="fa fa-search"></i></a>
+											<a class="iconSearch roboto whiteTxtColor" href="#">
+												<i class="fa fa-search"></i>
+											</a>
 										</li>
 										<li class="dropdown">
-											<a data-toggle="dropdown" class="roboto whiteTxtColor dropdown-toggle" href="home-1.html">HOME <i class="fa fa-angle-down"></i></a>
+											<a data-toggle="dropdown" class="roboto whiteTxtColor dropdown-toggle" href="home-1.html">HOME
+												<i class="fa fa-angle-down"></i>
+											</a>
 											<ul class="dropdown-menu clearfix">
-												<li><a class="roboto" href="home-1.html">HOME Version 1</a></li>
-												<li><a class="roboto" href="home-2.html">HOME Version 2</a></li>
-												<li><a class="roboto" href="home-3.html">HOME Version 3</a></li>
+												<li>
+													<a class="roboto" href="home-1.html">HOME Version 1</a>
+												</li>
+												<li>
+													<a class="roboto" href="home-2.html">HOME Version 2</a>
+												</li>
+												<li>
+													<a class="roboto" href="home-3.html">HOME Version 3</a>
+												</li>
 											</ul>
 										</li>
-										<li><a class="roboto whiteTxtColor" href="home-1.html">ABOUT</a></li>
-										<li><a class="roboto whiteTxtColor" href="demo.html">DEMO</a></li>
-										<li><a class="roboto whiteTxtColor" href="app-store.html">FEATURES</a></li>
-										<li><a class="roboto whiteTxtColor" href="home-1.html">SCREENS</a></li>
-										<li><a class="roboto whiteTxtColor" href="home-1.html">SUPPORT</a></li>
+										<li>
+											<a class="roboto whiteTxtColor" href="home-1.html">ABOUT</a>
+										</li>
+										<li>
+											<a class="roboto whiteTxtColor" href="demo.html">DEMO</a>
+										</li>
+										<li>
+											<a class="roboto whiteTxtColor" href="app-store.html">FEATURES</a>
+										</li>
+										<li>
+											<a class="roboto whiteTxtColor" href="home-1.html">SCREENS</a>
+										</li>
+										<li>
+											<a class="roboto whiteTxtColor" href="home-1.html">SUPPORT</a>
+										</li>
 									</ul>
 								</nav>
 							</div>
@@ -121,13 +209,16 @@
 						<div class="header-left">
 							<h1 class="header-title ralewaySemiBold whiteTxtColor">Test your oracle data pipeline before writing any code!</h1>
 							<span class="header-subtitle_small roboto whiteTxtColor">Oracle Sandbox allows dApp builders to draft out how their off-chain will flow in.</span>
-							<span class="header-subtitle_bold robotoMedium whiteTxtColor">Architecture and it's Security</span>	
+							<span class="header-subtitle_bold robotoMedium whiteTxtColor">Architecture and it's Security</span>
 							<div class="video-conatiner">
 								<a class="video-image playVideo" href="http://www.youtube.com/watch?v=_NIsv0aHbOw" data-toggle="lightbox" data-title="Intro Video">
 									<img src="media/home/6.jpg" alt="Video">
-									<span><i class="fa fa-play customColor"></i></span>
+									<span>
+										<i class="fa fa-play customColor"></i>
+									</span>
 								</a>
-								<a class="video-text playVideo robotoLight whiteTxtColor" href="http://www.youtube.com/watch?v=_NIsv0aHbOw" data-toggle="lightbox" data-title="Intro Video">Watch the Intro Video</a>
+								<a class="video-text playVideo robotoLight whiteTxtColor" href="http://www.youtube.com/watch?v=_NIsv0aHbOw" data-toggle="lightbox"
+								    data-title="Intro Video">Watch the Intro Video</a>
 							</div>
 						</div>
 						<div class="header-right">
@@ -172,17 +263,58 @@
 			<h3 class="sectionTitle text-center ralewayLight balck">The Demo</h3>
 			<ul class="featuresList pull-left col-lg-12">
 
-				<div id="demoDiv" style="text-align: center">
-					<canvas id='mycanvas' width='1024' height='720' style='border: 1px solid;'></canvas>
+				<div id="demoBox">
+					<div id="moduleBox">
+						<div id="moduleTitle">
+							<h3>MODULES</h3>
+						</div>
+
+						<div id="moduleSpace">
+							<div id="newContractMod">
+								<button type="button" class="btn btn-primary" onclick="newContract()">New Contract</button>
+							</div>
+			
+							<div id="newAPIMod">
+								<button type="button" class="btn btn-primary" onclick="newAPI()">New API</button>
+							</div>
+						</div>
+
+						<li id="oracleDropdown" class="dropdown">
+								<a data-toggle="dropdown" class="roboto whiteTxtColor dropdown-toggle">Oracle Technology
+									<i class="fa fa-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu clearfix">
+									<li>
+										<a onclick="upgradeGrade()" class="roboto">Tellor</a>
+									</li>
+									<li>
+										<a class="roboto">Chainlink</a>
+									</li>
+									<li>
+										<a class="roboto">Secure Enclave</a>
+									</li>
+								</ul>
+							</li>
+						
+					</div>
+
+					<div id="demoDiv">
+						<canvas id='mycanvas' width='768' height='540' style='border: 1px solid;'></canvas>
+					</div>
+
+					<div id="gradeBox">
+
+						<div>
+							<button type="button" class="btn btn-primary" onclick="updateGrade()">Update</button>
+						</div>
+
+						<p id="currentGrade">NOT SECURE</p>
+
+					</div>
 				</div>
 
-				<div>
-					<button onclick="newContract()">New Contract</button>
-				</div>
 
-				<div>
-					<button onclick="newAPI()">New API</button>
-				</div>
+
 		</section>
 
 		<section id="amazingFeatures" class="pageRow straight graySection">
@@ -1013,6 +1145,7 @@
 		}
 	</script>
 
+	<script src="./gradeengine.js"></script>
 
 	<script src="js/jquery.placeholder.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
