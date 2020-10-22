@@ -1112,9 +1112,9 @@
 		LiteGraph.registerNodeType("basic/contract", MyAddNode2);
 		LiteGraph.registerNodeType("basic/statecontract", MyAddNode3);
 		LiteGraph.registerNodeType("basic/webapi", MyAddNode4);
-		var graph = new LGraph();
+		var graph2 = new LGraph();
 
-		var canvas = new LGraphCanvas("#mycanvas", graph);
+		var canvas = new LGraphCanvas("#mycanvas", graph2);
 
 		console.log("LiteGraph: ", LiteGraph)
 		var node_const = LiteGraph.createNode("basic/sum", "Oracle Contract");
@@ -1123,20 +1123,22 @@
 		//I think eth.build generates a menu item based on mouse behavior built using a React feature
 		console.log("node_const: ", node_const);
 		node_const.pos = [200, 200];
-		graph.add(node_const);
+		graph2.add(node_const);
 		// node_const.setValue(4.5);
 
 		var node_const = LiteGraph.createNode("basic/contract", "Intake Contract")
 		node_const.pos = [400, 200]
-		graph.add(node_const);
+		graph2.add(node_const);
 
 		// var node_watch = LiteGraph.createNode("basic/watch");
 		// node_watch.pos = [700,200];
-		// graph.add(node_watch);
+		// graph2.add(node_watch);
 
 		// node_const.connect(0, node_watch, 0 );
 
-		graph.start();
+		graph2.start();
+
+		console.log("graph2: ", graph2)
 
 		function newContract() {
 			console.log("Generating new contract module");
@@ -1144,7 +1146,7 @@
 			var node_const3 = LiteGraph.createNode("basic/statecontract", "dApp State Contract")
 
 			node_const.pos = [500, 500];
-			graph.add(node_const3);
+			graph2.add(node_const3);
 		}
 
 		function newAPI() {
@@ -1153,7 +1155,7 @@
 			var node_const4 = LiteGraph.createNode("basic/webapi", "Web API")
 
 			node_const.pos = [700, 100];
-			graph.add(node_const4);
+			graph2.add(node_const4);
 		}
 	</script>
 
