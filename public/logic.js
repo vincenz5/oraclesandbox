@@ -69,12 +69,10 @@ function assignScopeToDataSource(scope, dataSource) {
     }
     graph[dataSource].dataScope = scope;
 }
-
 // used to assess whether 
 function assignDatatypeToDataSource(dataType, dataSource) {
     graph[dataSource].dataType = dataType;
 }
-
 function contractGetsDatasourceFromOracle(contract, dataSource, oracle) {
     // assertions
     //contract exists
@@ -98,9 +96,92 @@ function contractGetsDatasourceFromOracle(contract, dataSource, oracle) {
     // connect data source to contract's oracle port
     graph[oracle].ports[contract][dataSource] = true;
 }
-// initialization
+// Prototype Grading System
+function gradeGraphComponents(graph) {
+    // Preprocessing
+    // Build component lists by type
+    var dataSources = [];
+    var smartContracts = [];
+    var oracles = [];
+    for (var key in graph) {
+        if (graph[key].type == "dataSource") {
+            dataSources.push(key);
+        }
+        if (graph[key].type == "smartContract") {
+            smartContracts.push(key);
+        }
+        if (graph[key].type == "oracle") {
+            oracles.push(key);
+        }
+    }
+    console.log("Data Sources:", dataSources.length);
+    console.log("Oracles:", oracles.length);
+    console.log("smartContracts:", smartContracts.length);
+    var gradeTable = {};
+    // Grade each Smart Contract  
+    for (var contract in smartContracts) {
+        // Establish Data Sources
+        // Lists the ID of all data sources the contract uses
+        var allContractDataSources = [];
+        for (var oracle in graph[contract].oracles) {
+            for (var dataSource in graph[oracle].ports[contract]) {
+                allContractDataSources.push(dataSource);
+            }
+        }
+        // Makes table of the different data types the smart contract uses
+        // and counts how many time each type is used
+        var dataTypeCount = {};
+        for (var dataSource in allContractDataSources) {
+            if (graph[dataSource].dataType in dataTypeCount) {
+                dataTypeCount[graph[dataSource].dataType]++;
+            }
+            else {
+                dataTypeCount[graph[dataSource].dataType] = 1;
+            }
+        }
+        // Grade Data Reliability
+        // Compare with Known Vulnerabilities
+        // Append grades
+        var quorumRating = 0;
+        var reliabilityGrade = 0;
+        var vulerableLibraries = {};
+        gradeTable[contract[quorumRating = 0]];
+        return gradeTable;
+    }
+    // Rate Data Reliability
+    // Compare Known Vulnerabilities
+}
+function contractImportsContract(contract, importedContract) {
+    // assert contracts exist
+    //contract exists and is type contract
+    if (!(contract in graph)) {
+        throw ("invalid contract UID");
+    }
+    if (graph[contract].type != "smartContract") {
+        throw ("contractImportsContract() must recieve components of type \"smartContract\"");
+    }
+    //importedContract exists and is type contract
+    if (!(importedContract in graph)) {
+        throw ("invalid contract UID");
+    }
+    if (graph[importedContract].type != "smartContract") {
+        throw ("contractImportsContract() must recieve components of type \"smartContract\"");
+    }
+    graph[contract].importedContracts[importedContract] = true;
+}
+function assignAddressOfComponent(address, component) {
+    // assertions
+    // component is smartContract or oracle
+    if (graph[component].type != "smartContract" && graph[component].type != "oracle") {
+        throw ("assignAddressOfComponent() can only be done to \"smartContracts\" and \"oracles\"");
+    }
+    graph[component].contractAddress = address;
+}
+// Main program
+var vulnerableContractAddresses = {
+    "0x10101": true
+};
 var graph = {};
-var compromisedContracts = [];
 // create example components
 var oracle1 = createNewComponent("oracle", "0x01");
 var dataSource1 = createNewComponent("dataSource");
@@ -108,17 +189,24 @@ var dataSource2 = createNewComponent("dataSource");
 var dataSource3 = createNewComponent("dataSource");
 var contract1 = createNewComponent("smartContract", "0x02");
 var contract2 = createNewComponent("smartContract");
-// assign data properties
-// assign data souce scopes (manually done by users)
+var contract3 = createNewComponent("smartContract");
+// assign component properties
+// data
+// assign data source scopes
 assignScopeToDataSource("global", dataSource1);
 // assign data Types to data Sources
 assignDatatypeToDataSource("weather", dataSource1);
+// contract/oracle addresses
+assignAddressOfComponent("0x10101", contract3);
 // connect example components
+// import contracts into other contracts as libraries
+contractImportsContract(contract1, contract3);
+// connect contracts to data they recieve from oracles
 // contract 1
 contractGetsDatasourceFromOracle(contract1, dataSource1, oracle1);
 contractGetsDatasourceFromOracle(contract1, dataSource2, oracle1);
 contractGetsDatasourceFromOracle(contract1, dataSource3, oracle1);
 // contract 2
 contractGetsDatasourceFromOracle(contract2, dataSource3, oracle1);
-// Main program
 console.log(graph);
+gradeGraphComponents(graph);
