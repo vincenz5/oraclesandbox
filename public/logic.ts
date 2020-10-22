@@ -114,8 +114,9 @@
         function gradeGraphComponents(graph)
         {
             let gradeTable = {}
-            for(const contract in smartContracts)
+            for(var i = 0; i < smartContracts.length; i++)
             {
+                let contract = smartContracts[i]
                 // Establish Data Sources
                         // Lists the ID of all data sources the contract uses
                         let allContractDataSources = []
@@ -142,6 +143,7 @@
                         if(graph[importedContract].contactAddress in vulnerableContractAddresses){
                             // flag contract as vulnerable
                             gradeTable[contract].vulnerableImports.push(importedContract)
+                            console.log("Vulnerable Imports:",gradeTable[contract].vulnerableImports)
                         }else{
 
                         }
@@ -276,4 +278,4 @@
 
 
 console.log(graph)
-// gradeGraphComponents(graph)
+gradeGraphComponents(graph)

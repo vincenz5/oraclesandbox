@@ -99,7 +99,9 @@ function contractGetsDatasourceFromOracle(contract, dataSource, oracle) {
 // Prototype Grading System
 function gradeGraphComponents(graph) {
     var gradeTable = {};
-    for (var contract in smartContracts) {
+    for (var i = 0; i < smartContracts.length; i++) {
+        var contract = smartContracts[i];
+        console.log("contract", contract);
         // Establish Data Sources
         // Lists the ID of all data sources the contract uses
         var allContractDataSources = [];
@@ -125,6 +127,7 @@ function gradeGraphComponents(graph) {
             if (graph[importedContract].contactAddress in vulnerableContractAddresses) {
                 // flag contract as vulnerable
                 gradeTable[contract].vulnerableImports.push(importedContract);
+                console.log("Vulnerable Imports:", gradeTable[contract].vulnerableImports);
             }
             else {
             }
@@ -233,4 +236,4 @@ for (var uid in graph) {
 }
 giveValuesToDataSources(dataSources);
 console.log(graph);
-// gradeGraphComponents(graph)
+gradeGraphComponents(graph);
