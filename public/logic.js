@@ -1,4 +1,4 @@
-// function declaration
+// function declarations
 function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -35,7 +35,8 @@ function createNewComponent(type, contractAddress) {
             "x": 0,
             "z": 0,
             "dataScope": "none",
-            "dataType": "none"
+            "dataType": "none",
+            "data": null
         };
     }
     else if (type == "smartContract") {
@@ -69,7 +70,6 @@ function assignScopeToDataSource(scope, dataSource) {
     }
     graph[dataSource].dataScope = scope;
 }
-// used to assess whether 
 function assignDatatypeToDataSource(dataType, dataSource) {
     graph[dataSource].dataType = dataType;
 }
@@ -98,25 +98,6 @@ function contractGetsDatasourceFromOracle(contract, dataSource, oracle) {
 }
 // Prototype Grading System
 function gradeGraphComponents(graph) {
-    // Preprocessing
-    // Build component lists by type
-    var dataSources = [];
-    var smartContracts = [];
-    var oracles = [];
-    for (var key in graph) {
-        if (graph[key].type == "dataSource") {
-            dataSources.push(key);
-        }
-        if (graph[key].type == "smartContract") {
-            smartContracts.push(key);
-        }
-        if (graph[key].type == "oracle") {
-            oracles.push(key);
-        }
-    }
-    console.log("Data Sources:", dataSources.length);
-    console.log("Oracles:", oracles.length);
-    console.log("smartContracts:", smartContracts.length);
     var gradeTable = {};
     // Grade each Smart Contract  
     for (var contract in smartContracts) {
@@ -177,18 +158,21 @@ function assignAddressOfComponent(address, component) {
     }
     graph[component].contractAddress = address;
 }
+function giveValuesToDatasources() {
+}
 // Main program
-// Make vulnerable address for vulnerabilility test
+// Make tables for grading & comparison
+// Vulnerable address for vulnerabilility test
 var vulnerableContractAddresses = {
     "0x10101": true
 };
 // Make Comparison Data for Data Reliability Test
 var comparisonData = {
-    temperature: {},
-    price: {}
+    // Represents current temperature from different sensors in an area 
+    // or price of an asset from different exchanges
+    temperature: [21, 22, 22, 23, 24, 25, 25],
+    price: [1381, 1381, 1382, 1383, 1385]
 };
-for (var data in comparisonData.temperature) {
-}
 var graph = {};
 // create example components
 var oracle1 = createNewComponent("oracle", "0x01");
@@ -203,7 +187,7 @@ var contract3 = createNewComponent("smartContract");
 // assign data source scopes
 assignScopeToDataSource("global", dataSource1);
 // assign data Types to data Sources
-assignDatatypeToDataSource("weather", dataSource1);
+assignDatatypeToDataSource("temperature", dataSource1);
 // contract/oracle addresses
 assignAddressOfComponent("0x10101", contract3);
 // connect example components
@@ -216,5 +200,23 @@ contractGetsDatasourceFromOracle(contract1, dataSource2, oracle1);
 contractGetsDatasourceFromOracle(contract1, dataSource3, oracle1);
 // contract 2
 contractGetsDatasourceFromOracle(contract2, dataSource3, oracle1);
+// Assign components into lists
+var dataSources = [];
+var smartContracts = [];
+var oracles = [];
+for (var key in graph) {
+    if (graph[key].type == "dataSource") {
+        dataSources.push(key);
+    }
+    if (graph[key].type == "smartContract") {
+        smartContracts.push(key);
+    }
+    if (graph[key].type == "oracle") {
+        oracles.push(key);
+    }
+}
+console.log("Data Sources:", dataSources.length);
+console.log("Oracles:", oracles.length);
+console.log("smartContracts:", smartContracts.length);
 console.log(graph);
 gradeGraphComponents(graph);
