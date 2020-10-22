@@ -101,7 +101,6 @@ function gradeGraphComponents(graph) {
     var gradeTable = {};
     for (var i = 0; i < smartContracts.length; i++) {
         var contract = smartContracts[i];
-        console.log("contract", contract);
         // Establish Data Sources
         // Lists the ID of all data sources the contract uses
         var allContractDataSources = [];
@@ -110,6 +109,7 @@ function gradeGraphComponents(graph) {
                 allContractDataSources.push(dataSource);
             }
         }
+        console.log("allContractDataSources", allContractDataSources);
         // Makes table of the different data types the smart contract uses
         // and counts how many time each type is used
         var dataTypeCount = {};
@@ -121,7 +121,14 @@ function gradeGraphComponents(graph) {
                 dataTypeCount[graph[dataSource].dataType] = 1;
             }
         }
+        console.log("dataTypeCount:", dataTypeCount);
         // Grade Data Reliability
+        for (var dataType in dataTypeCount) {
+            if (dataType == "temperature") {
+            }
+            if (dataType == "price") {
+            }
+        }
         // Compare with Known Vulnerabilities
         for (var importedContract in graph[contract].importedContracts) {
             if (graph[importedContract].contactAddress in vulnerableContractAddresses) {
@@ -129,14 +136,12 @@ function gradeGraphComponents(graph) {
                 gradeTable[contract].vulnerableImports.push(importedContract);
                 console.log("Vulnerable Imports:", gradeTable[contract].vulnerableImports);
             }
-            else {
-            }
         }
         // Append grades
-        var quorumRating = 0;
-        var reliabilityGrade = 0;
-        var vulerableLibraries = {};
-        gradeTable[contract[quorumRating = 0]];
+        // let quorumRating = 0
+        // let reliabilityGrade = 0
+        // let vulerableLibraries = {}
+        // gradeTable[contract[quorumRating = 0]]
         return gradeTable;
     }
     // Rate Data Reliability

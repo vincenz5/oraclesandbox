@@ -118,16 +118,17 @@
             {
                 let contract = smartContracts[i]
                 // Establish Data Sources
-                        // Lists the ID of all data sources the contract uses
+                    // Lists the ID of all data sources the contract uses
                         let allContractDataSources = []
                         for (const oracle in graph[contract].oracles){
                             for (const dataSource in graph[oracle].ports[contract]){
                                 allContractDataSources.push(dataSource)
                             }
                         }
+                        console.log("allContractDataSources",allContractDataSources)
 
-                        // Makes table of the different data types the smart contract uses
-                        // and counts how many time each type is used
+                    // Makes table of the different data types the smart contract uses
+                    // and counts how many time each type is used
                         let dataTypeCount = {}
                         for (const dataSource in allContractDataSources){
                             if (graph[dataSource].dataType in dataTypeCount){
@@ -136,23 +137,34 @@
                                 dataTypeCount[graph[dataSource].dataType] = 1
                             }
                         }
+                        console.log("dataTypeCount:",dataTypeCount)
+
                 // Grade Data Reliability
-                    
+                    for(let dataType in dataTypeCount){
+                        if(dataType == "temperature"){
+                            
+                        }
+                        if(dataType == "price"){
+                            
+                        }
+                    }
                 // Compare with Known Vulnerabilities
                     for(let importedContract in graph[contract].importedContracts){
                         if(graph[importedContract].contactAddress in vulnerableContractAddresses){
                             // flag contract as vulnerable
                             gradeTable[contract].vulnerableImports.push(importedContract)
                             console.log("Vulnerable Imports:",gradeTable[contract].vulnerableImports)
-                        }else{
-
                         }
                     }
                 // Append grades
-                    let quorumRating = 0
-                    let reliabilityGrade = 0
-                    let vulerableLibraries = {}
-                    gradeTable[contract[quorumRating = 0]]
+
+
+
+                
+                    // let quorumRating = 0
+                    // let reliabilityGrade = 0
+                    // let vulerableLibraries = {}
+                    // gradeTable[contract[quorumRating = 0]]
                     
                     return gradeTable;
             }
