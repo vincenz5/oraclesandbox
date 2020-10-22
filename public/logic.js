@@ -208,5 +208,5 @@ contractGetsDatasourceFromOracle(contract1, dataSource2, oracle1);
 contractGetsDatasourceFromOracle(contract1, dataSource3, oracle1);
 // contract 2
 contractGetsDatasourceFromOracle(contract2, dataSource3, oracle1);
-console.log(graph);
+console.log("graph: ", graph);
 gradeGraphComponents(graph);
