@@ -159,6 +159,14 @@ function assignAddressOfComponent(address, component) {
     graph[component].contractAddress = address;
 }
 function giveValuesToDatasources() {
+    for (var dataSource in dataSources) {
+        if (graph[dataSource].type == "temperature") {
+            graph[dataSource].data = randomIntFromInterval(19, 27);
+        }
+        if (graph[dataSource].type == "price") {
+            graph[dataSource].data = randomIntFromInterval(1378, 1388);
+        }
+    }
 }
 // Main program
 // Make tables for grading & comparison
@@ -218,5 +226,6 @@ for (var key in graph) {
 console.log("Data Sources:", dataSources.length);
 console.log("Oracles:", oracles.length);
 console.log("smartContracts:", smartContracts.length);
+giveValuesToDatasources();
 console.log(graph);
 gradeGraphComponents(graph);

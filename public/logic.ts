@@ -111,51 +111,51 @@
 
 
     // Prototype Grading System
-    function gradeGraphComponents(graph)
-    {
-
-        let gradeTable = {}
-
-    // Grade each Smart Contract  
-        for(const contract in smartContracts)
+        function gradeGraphComponents(graph)
         {
-        // Establish Data Sources
-            // Lists the ID of all data sources the contract uses
-                let allContractDataSources = []
-                for (const oracle in graph[contract].oracles){
-                    for (const dataSource in graph[oracle].ports[contract]){
-                        allContractDataSources.push(dataSource)
-                    }
-                }
 
-            // Makes table of the different data types the smart contract uses
-            // and counts how many time each type is used
-                let dataTypeCount = {}
-                for (const dataSource in allContractDataSources){
-                    if (graph[dataSource].dataType in dataTypeCount){
-                        dataTypeCount[graph[dataSource].dataType]++
-                    }else{
-                        dataTypeCount[graph[dataSource].dataType] = 1
+            let gradeTable = {}
+
+        // Grade each Smart Contract  
+            for(const contract in smartContracts)
+            {
+            // Establish Data Sources
+                // Lists the ID of all data sources the contract uses
+                    let allContractDataSources = []
+                    for (const oracle in graph[contract].oracles){
+                        for (const dataSource in graph[oracle].ports[contract]){
+                            allContractDataSources.push(dataSource)
+                        }
                     }
-                }
-        // Grade Data Reliability
+
+                // Makes table of the different data types the smart contract uses
+                // and counts how many time each type is used
+                    let dataTypeCount = {}
+                    for (const dataSource in allContractDataSources){
+                        if (graph[dataSource].dataType in dataTypeCount){
+                            dataTypeCount[graph[dataSource].dataType]++
+                        }else{
+                            dataTypeCount[graph[dataSource].dataType] = 1
+                        }
+                    }
+            // Grade Data Reliability
+                
+            // Compare with Known Vulnerabilities
+                
+            // Append grades
+                let quorumRating = 0
+                let reliabilityGrade = 0
+                let vulerableLibraries = {}
+                gradeTable[contract[quorumRating = 0]]
+                
+                return gradeTable;
+            }
+
+
+        // Rate Data Reliability
+        // Compare Known Vulnerabilities
             
-        // Compare with Known Vulnerabilities
-            
-        // Append grades
-            let quorumRating = 0
-            let reliabilityGrade = 0
-            let vulerableLibraries = {}
-            gradeTable[contract[quorumRating = 0]]
-            
-            return gradeTable;
         }
-
-
-    // Rate Data Reliability
-    // Compare Known Vulnerabilities
-        
-    }
 
     function contractImportsContract(contract, importedContract){
         // assert contracts exist
@@ -188,7 +188,15 @@
     }
 
     function giveValuesToDatasources(){
-
+        for(let dataSource in dataSources){
+            if(graph[dataSource].type == "temperature"){
+                graph[dataSource].data = randomIntFromInterval(19, 27) 
+            }
+            if(graph[dataSource].type == "price"){
+                graph[dataSource].data = randomIntFromInterval(1378, 1388) 
+            }
+        }
+            
     }
 
 // Main program
@@ -246,21 +254,19 @@
         let dataSources = [];
         let smartContracts = [];
         let oracles = [];
-        for (var key in graph) {
-            if(graph[key].type == "dataSource"){
-                dataSources.push(key)
+        for (var uid in graph) {
+            if(graph[uid].type == "dataSource"){
+                dataSources.push(uid)
             }
-            if(graph[key].type == "smartContract"){
-                smartContracts.push(key)
+            if(graph[uid].type == "smartContract"){
+                smartContracts.push(uid)
             }
-            if(graph[key].type == "oracle"){
-                oracles.push(key)
+            if(graph[uid].type == "oracle"){
+                oracles.push(uid)
             }
         }
 
-        console.log("Data Sources:", dataSources.length)
-        console.log("Oracles:", oracles.length)
-        console.log("smartContracts:", smartContracts.length)
+        giveValuesToDatasources()
 
 
 
