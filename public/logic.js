@@ -99,7 +99,6 @@ function contractGetsDatasourceFromOracle(contract, dataSource, oracle) {
 // Prototype Grading System
 function gradeGraphComponents(graph) {
     var gradeTable = {};
-    // Grade each Smart Contract  
     for (var contract in smartContracts) {
         // Establish Data Sources
         // Lists the ID of all data sources the contract uses
@@ -122,6 +121,14 @@ function gradeGraphComponents(graph) {
         }
         // Grade Data Reliability
         // Compare with Known Vulnerabilities
+        for (var importedContract in graph[contract].importedContracts) {
+            if (graph[importedContract].contactAddress in vulnerableContractAddresses) {
+                // flag contract as vulnerable
+                gradeTable[contract].vulnerableImports.push(importedContract);
+            }
+            else {
+            }
+        }
         // Append grades
         var quorumRating = 0;
         var reliabilityGrade = 0;
@@ -159,8 +166,8 @@ function assignAddressOfComponent(address, component) {
     graph[component].contractAddress = address;
 }
 function giveValuesToDataSources(dataSources) {
-    for (var i = 0; i < dataSources.length; i++) {
-        var dataSource = dataSources[i];
+    console.log(dataSources);
+    for (var dataSource in dataSources) {
         if (graph[dataSource].dataType == "temperature") {
             graph[dataSource].data = randomIntFromInterval(19, 27);
         }

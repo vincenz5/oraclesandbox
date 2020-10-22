@@ -113,42 +113,46 @@
     // Prototype Grading System
         function gradeGraphComponents(graph)
         {
-
             let gradeTable = {}
-
-        // Grade each Smart Contract  
             for(const contract in smartContracts)
             {
-            // Establish Data Sources
-                // Lists the ID of all data sources the contract uses
-                    let allContractDataSources = []
-                    for (const oracle in graph[contract].oracles){
-                        for (const dataSource in graph[oracle].ports[contract]){
-                            allContractDataSources.push(dataSource)
+                // Establish Data Sources
+                        // Lists the ID of all data sources the contract uses
+                        let allContractDataSources = []
+                        for (const oracle in graph[contract].oracles){
+                            for (const dataSource in graph[oracle].ports[contract]){
+                                allContractDataSources.push(dataSource)
+                            }
                         }
-                    }
 
-                // Makes table of the different data types the smart contract uses
-                // and counts how many time each type is used
-                    let dataTypeCount = {}
-                    for (const dataSource in allContractDataSources){
-                        if (graph[dataSource].dataType in dataTypeCount){
-                            dataTypeCount[graph[dataSource].dataType]++
+                        // Makes table of the different data types the smart contract uses
+                        // and counts how many time each type is used
+                        let dataTypeCount = {}
+                        for (const dataSource in allContractDataSources){
+                            if (graph[dataSource].dataType in dataTypeCount){
+                                dataTypeCount[graph[dataSource].dataType]++
+                            }else{
+                                dataTypeCount[graph[dataSource].dataType] = 1
+                            }
+                        }
+                // Grade Data Reliability
+                    
+                // Compare with Known Vulnerabilities
+                    for(let importedContract in graph[contract].importedContracts){
+                        if(graph[importedContract].contactAddress in vulnerableContractAddresses){
+                            // flag contract as vulnerable
+                            gradeTable[contract].vulnerableImports.push(importedContract)
                         }else{
-                            dataTypeCount[graph[dataSource].dataType] = 1
+
                         }
                     }
-            // Grade Data Reliability
-                
-            // Compare with Known Vulnerabilities
-                
-            // Append grades
-                let quorumRating = 0
-                let reliabilityGrade = 0
-                let vulerableLibraries = {}
-                gradeTable[contract[quorumRating = 0]]
-                
-                return gradeTable;
+                // Append grades
+                    let quorumRating = 0
+                    let reliabilityGrade = 0
+                    let vulerableLibraries = {}
+                    gradeTable[contract[quorumRating = 0]]
+                    
+                    return gradeTable;
             }
 
 
@@ -188,8 +192,8 @@
     }
 
     function giveValuesToDataSources(dataSources){
-        for(let i = 0; i < dataSources.length; i++){
-            const dataSource = dataSources[i]
+        console.log(dataSources)
+        for(let dataSource in dataSources){
             if(graph[dataSource].dataType == "temperature"){
                 graph[dataSource].data = randomIntFromInterval(19, 27) 
             }
