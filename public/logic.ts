@@ -187,12 +187,12 @@
 
     }
 
-    function giveValuesToDatasources(){
+    function giveValuesToDataSources(dataSources){
         for(let dataSource in dataSources){
-            if(graph[dataSource].type == "temperature"){
+            if(graph[dataSource].dataType == "temperature"){
                 graph[dataSource].data = randomIntFromInterval(19, 27) 
             }
-            if(graph[dataSource].type == "price"){
+            if(graph[dataSource].dataType == "price"){
                 graph[dataSource].data = randomIntFromInterval(1378, 1388) 
             }
         }
@@ -266,9 +266,9 @@
             }
         }
 
-        giveValuesToDatasources()
+        giveValuesToDataSources(dataSources)
 
 
 
 console.log(graph)
-gradeGraphComponents(graph)
+// gradeGraphComponents(graph)

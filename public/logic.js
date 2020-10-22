@@ -158,12 +158,12 @@ function assignAddressOfComponent(address, component) {
     }
     graph[component].contractAddress = address;
 }
-function giveValuesToDatasources() {
+function giveValuesToDataSources(dataSources) {
     for (var dataSource in dataSources) {
-        if (graph[dataSource].type == "temperature") {
+        if (graph[dataSource].dataType == "temperature") {
             graph[dataSource].data = randomIntFromInterval(19, 27);
         }
-        if (graph[dataSource].type == "price") {
+        if (graph[dataSource].dataType == "price") {
             graph[dataSource].data = randomIntFromInterval(1378, 1388);
         }
     }
@@ -212,20 +212,17 @@ contractGetsDatasourceFromOracle(contract2, dataSource3, oracle1);
 var dataSources = [];
 var smartContracts = [];
 var oracles = [];
-for (var key in graph) {
-    if (graph[key].type == "dataSource") {
-        dataSources.push(key);
+for (var uid in graph) {
+    if (graph[uid].type == "dataSource") {
+        dataSources.push(uid);
     }
-    if (graph[key].type == "smartContract") {
-        smartContracts.push(key);
+    if (graph[uid].type == "smartContract") {
+        smartContracts.push(uid);
     }
-    if (graph[key].type == "oracle") {
-        oracles.push(key);
+    if (graph[uid].type == "oracle") {
+        oracles.push(uid);
     }
 }
-console.log("Data Sources:", dataSources.length);
-console.log("Oracles:", oracles.length);
-console.log("smartContracts:", smartContracts.length);
-giveValuesToDatasources();
+giveValuesToDataSources(dataSources);
 console.log(graph);
-gradeGraphComponents(graph);
+// gradeGraphComponents(graph)
