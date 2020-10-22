@@ -1,7 +1,7 @@
 grade = "VERY SECURE";
 
 gradeAmount = 0;
-		
+
 function updateGrade() {
     grade = this.grade;
     document.getElementById("currentGrade").innerHTML = grade;
