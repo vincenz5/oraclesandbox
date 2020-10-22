@@ -159,7 +159,8 @@ function assignAddressOfComponent(address, component) {
     graph[component].contractAddress = address;
 }
 function giveValuesToDataSources(dataSources) {
-    for (var dataSource in dataSources) {
+    for (var i = 0; i < dataSources.length; i++) {
+        var dataSource = dataSources[i];
         if (graph[dataSource].dataType == "temperature") {
             graph[dataSource].data = randomIntFromInterval(19, 27);
         }

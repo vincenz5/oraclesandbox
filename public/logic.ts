@@ -188,7 +188,8 @@
     }
 
     function giveValuesToDataSources(dataSources){
-        for(let dataSource in dataSources){
+        for(let i = 0; i < dataSources.length; i++){
+            const dataSource = dataSources[i]
             if(graph[dataSource].dataType == "temperature"){
                 graph[dataSource].data = randomIntFromInterval(19, 27) 
             }
