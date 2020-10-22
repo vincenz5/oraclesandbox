@@ -178,9 +178,17 @@ function assignAddressOfComponent(address, component) {
     graph[component].contractAddress = address;
 }
 // Main program
+// Make vulnerable address for vulnerabilility test
 var vulnerableContractAddresses = {
     "0x10101": true
 };
+// Make Comparison Data for Data Reliability Test
+var comparisonData = {
+    temperature: {},
+    price: {}
+};
+for (var data in comparisonData.temperature) {
+}
 var graph = {};
 // create example components
 var oracle1 = createNewComponent("oracle", "0x01");

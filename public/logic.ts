@@ -210,13 +210,27 @@ function assignAddressOfComponent(address, component){
 
 // Main program
 
-const vulnerableContractAddresses = {
-    "0x10101": true
-}
+// Make vulnerable address for vulnerabilility test
+    const vulnerableContractAddresses = {
+        "0x10101": true,
+        // getRandomHexUid()
+    }
+// Make Comparison Data for Data Reliability Test
+    let comparisonData = {
+        temperature: {},
+        price: {}
+    }
+
+    for(var data in comparisonData.temperature){
+        
+    }
 
 let graph = {
     
 }
+
+
+
 
 // create example components
     const oracle1 = createNewComponent("oracle", "0x01")
@@ -251,4 +265,3 @@ let graph = {
 
 console.log(graph)
 gradeGraphComponents(graph)
-
