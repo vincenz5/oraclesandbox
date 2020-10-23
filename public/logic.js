@@ -99,8 +99,9 @@ function contractGetsDatasourceFromOracle(contract, dataSource, oracle) {
 // Prototype Grading System
 function gradeGraphComponents(graph) {
     var gradeTable = {};
-    for (var i = 0; i < smartContracts.length; i++) {
+    for (var i in smartContracts) {
         var contract = smartContracts[i];
+        gradeTable[contract] = {};
         // Establish Data Sources
         // Lists the ID of all data sources the contract uses
         var allContractDataSources = [];
@@ -113,7 +114,7 @@ function gradeGraphComponents(graph) {
         // Makes table of the different data types the smart contract uses
         // and counts how many time each type is used
         var dataTypeCount = {};
-        for (var i = 0; i < allContractDataSources.length; i++) {
+        for (var i in allContractDataSources) {
             var dataSource = allContractDataSources[i];
             if (graph[dataSource].dataType in dataTypeCount) {
                 dataTypeCount[graph[dataSource].dataType]++;
@@ -126,18 +127,23 @@ function gradeGraphComponents(graph) {
         // Grade Quorum Score
         gradeTable[contract].dataTypeCount = dataTypeCount;
         // Grade Data Reliability
+        gradeTable[contract].dataOutliers = {};
         for (var i_1 in allContractDataSources) {
             var dataSource = allContractDataSources[i_1];
             if (graph[dataSource].dataType == "temperature") {
                 if ((graph[dataSource].data > comparisonData.temperature[comparisonData.temperature.length - 1]) || graph[dataSource].data > comparisonData.temperature[0]) {
                     // If data is not within same range of comparisonData
-                    gradeTable[contract].dataOutliers.push(dataSource);
+                    gradeTable[contract].dataOutliers[dataSource] = graph[dataSource].dataType;
                 }
-                else {
+            }
+            if (graph[dataSource].dataType == "price") {
+                if ((graph[dataSource].data > comparisonData.price[comparisonData.price.length - 1]) || graph[dataSource].data > comparisonData.price[0]) {
+                    gradeTable[contract].dataOutliers[dataSource] = graph[dataSource].dataType;
                 }
             }
         }
         // Compare with Known Vulnerabilities
+        gradeTable[contract].vulnerableImports = [];
         for (var importedContract in graph[contract].importedContracts) {
             if (graph[importedContract].contactAddress in vulnerableContractAddresses) {
                 // flag contract as vulnerable
@@ -149,6 +155,7 @@ function gradeGraphComponents(graph) {
         // let reliabilityGrade = 0
         // let vulerableLibraries = {}
         // gradeTable[contract[quorumRating = 0]]
+        console.log("gradeTable:", gradeTable);
         return gradeTable;
     }
 }
@@ -247,6 +254,5 @@ for (var uid in graph) {
     }
 }
 giveValuesToDataSources(dataSources);
-
 console.log("graph: ", graph);
 gradeGraphComponents(graph);
