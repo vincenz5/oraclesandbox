@@ -114,9 +114,10 @@
         function gradeGraphComponents(graph)
         {
             let gradeTable = {}
-            for(var i = 0; i < smartContracts.length; i++)
+            for(var i in smartContracts)
             {
                 let contract = smartContracts[i]
+                gradeTable[contract] = {}
                 // Establish Data Sources
                     // Lists the ID of all data sources the contract uses
                         let allContractDataSources = []
@@ -130,7 +131,7 @@
                     // Makes table of the different data types the smart contract uses
                     // and counts how many time each type is used
                         let dataTypeCount = {}
-                        for(var i = 0; i < allContractDataSources.length; i++){
+                        for(var i in allContractDataSources){
                             let dataSource = allContractDataSources[i]
                             if (graph[dataSource].dataType in dataTypeCount){
                                 dataTypeCount[graph[dataSource].dataType]++
@@ -143,20 +144,24 @@
                     gradeTable[contract].dataTypeCount = dataTypeCount
 
                 // Grade Data Reliability
+                    gradeTable[contract].dataOutliers = {}
                     for (const i in allContractDataSources){
                         let dataSource = allContractDataSources[i]
                         if(graph[dataSource].dataType == "temperature"){
                             if((graph[dataSource].data > comparisonData.temperature[comparisonData.temperature.length-1]) || graph[dataSource].data > comparisonData.temperature[0]){
                                 // If data is not within same range of comparisonData
-                                gradeTable[contract].dataOutliers.push(dataSource)
-                            }else{
-
+                                gradeTable[contract].dataOutliers[dataSource] = graph[dataSource].dataType
                             }
                         }
-
+                        if(graph[dataSource].dataType == "price"){
+                            if((graph[dataSource].data > comparisonData.price[comparisonData.price.length-1]) || graph[dataSource].data > comparisonData.price[0]){
+                                gradeTable[contract].dataOutliers[dataSource] = graph[dataSource].dataType
+                            }
+                        }
                     }
 
                 // Compare with Known Vulnerabilities
+                    gradeTable[contract].vulnerableImports = []
                     for(let importedContract in graph[contract].importedContracts){
                         if(graph[importedContract].contactAddress in vulnerableContractAddresses){
                             // flag contract as vulnerable
@@ -169,6 +174,7 @@
                     // let vulerableLibraries = {}
                     // gradeTable[contract[quorumRating = 0]]
                     
+                    console.log("gradeTable:",gradeTable)
                     return gradeTable;
             }  
         }
