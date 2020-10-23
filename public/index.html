@@ -279,12 +279,26 @@
 							</div>
 							<hr>
 							<div>
+								<h4>Oracles</h4>
+								<div id="newOracleMod">
+									<button type="button" class="btn btn-primary" onclick="newOracle()">New Oracle</button>
+								</div>
+							</div>
+							<hr>
+							<div>
 								<h4>Smart Contracts</h4>
 								<div id="newContractMod">
 									<button type="button" class="btn btn-primary" onclick="newContract()">New Contract</button>
-									<!-- <button type="button" class="btn btn-primary" onclick="newContract()">New Contract 2</button> -->
 								</div>
 							</div>
+							<hr>
+							<div>
+								<h4>Other</h4>
+								<div id="newPortMod">
+									<button type="button" class="btn btn-primary" onclick="newPort()">New Port</button>
+								</div>
+							</div>
+							
 
 						</div>
 						<hr>
@@ -1082,7 +1096,7 @@
 					};
 				};
 
-				function oraclePortNode() {
+				function portNode() {
 					this.addInput("data source", "number");
 					this.addInput("data source", "number");
 					this.addInput("data source", "number");
@@ -1112,14 +1126,14 @@
 
 			// assign titles
 				dataSourceNode.title = "dataSource"
-				oraclePortNode.title = "oraclePort"
+				portNode.title = "port"
 				oracleNode.title = "oracle"
 				smartContractNode.title = "smartContractNode"
 
 
 			//register in the system
 				LiteGraph.registerNodeType("dataSource", dataSourceNode);
-				LiteGraph.registerNodeType("oraclePort", oraclePortNode)
+				LiteGraph.registerNodeType("port", portNode)
 				LiteGraph.registerNodeType("oracle", oracleNode)
 				LiteGraph.registerNodeType("smartContract", smartContractNode)
 
@@ -1148,12 +1162,13 @@
 			console.log("graph2: ", graph2)
 
 		// functions for creating new contracts while graph2 is running.
+
 			function newContract() {
 				console.log("Generating new contract module");
 
 				// spawn smartContract node
 					let newContractNode = LiteGraph.createNode("smartContract", "smart contract");
-					newContractNode.pos = [400, 200];
+					newContractNode.pos = [250, 100]
 					graph2.add(newContractNode);
 			}
 
@@ -1162,7 +1177,25 @@
 
 				// spawn smartContract node
 					let newDataSourceNode = LiteGraph.createNode("dataSource", "API data source");
-					newDataSourceNode.pos = [400, 200];
+					newDataSourceNode.pos = [250, 100]
+					graph2.add(newDataSourceNode);
+			}
+
+			function newOracle() {
+				console.log("Generating new API");
+
+				// spawn smartContract node
+					let newDataSourceNode = LiteGraph.createNode("oracle", "oracle");
+					newDataSourceNode.pos = [250, 100]
+					graph2.add(newDataSourceNode);
+			}
+
+			function newPort() {
+				console.log("Generating new API");
+
+				// spawn smartContract node
+					let newDataSourceNode = LiteGraph.createNode("port", "port");
+					newDataSourceNode.pos = [250, 100]
 					graph2.add(newDataSourceNode);
 			}
 	</script>
