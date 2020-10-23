@@ -1107,8 +1107,14 @@
 				};
 
 				function oracleNode() {
-					this.addInput("data source", "number");
-					this.addOutput("smart contract", "number");
+					this.addInput("SC-0 data source", "number");
+					this.addOutput("smart contract 0", "number");
+
+					this.addInput("SC-1 data source", "number");
+					this.addOutput("smart contract 1", "number");
+
+					this.addInput("SC-2 data source", "number");
+					this.addOutput("smart contract 2", "number");
 					this.properties = {
 						precision: 1
 					};
@@ -1145,12 +1151,12 @@
 
 		// spawn example nodes
 			// spawn smartContract node
-				let newContractNode = LiteGraph.createNode("smartContract", "smart contract 1");
+				let newContractNode = LiteGraph.createNode("smartContract", "smart contract");
 				newContractNode.pos = [400, 200];
 				graph2.add(newContractNode);
 
 			// spawn oracle node
-				let newOracleNode = LiteGraph.createNode("oracle", "oracle 1");
+				let newOracleNode = LiteGraph.createNode("oracle", "oracle");
 				newOracleNode.pos = [100, 200];
 				graph2.add(newOracleNode);
 
