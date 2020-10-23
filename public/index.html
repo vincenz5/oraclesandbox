@@ -274,7 +274,7 @@
 								<h4>Data Feeds</h4>
 								<div id="newAPIMod">
 									<button type="button" class="btn btn-primary" onclick="newAPI()">New API</button>
-									<button type="button" class="btn btn-primary" onclick="newAPI()">New API 2</button>
+									<!-- <button type="button" class="btn btn-primary" onclick="newAPI()">New API 2</button> -->
 								</div>
 							</div>
 							<hr>
@@ -282,7 +282,7 @@
 								<h4>Smart Contracts</h4>
 								<div id="newContractMod">
 									<button type="button" class="btn btn-primary" onclick="newContract()">New Contract</button>
-									<button type="button" class="btn btn-primary" onclick="newContract()">New Contract 2</button>
+									<!-- <button type="button" class="btn btn-primary" onclick="newContract()">New Contract 2</button> -->
 								</div>
 							</div>
 
@@ -1061,41 +1061,6 @@
 			// 	};
 			// }
 
-			// //node constructor class 2
-			// function MyAddNode2() {
-			// 	this.addInput("intake1", "number");
-			// 	this.addInput("intake2", "number");
-			// 	this.addOutput("txnCreate", "number");
-			// 	this.addOutput("stateUpdate", "number");
-			// 	this.properties = {
-			// 		precision: 1
-			// 	};
-			// };
-
-			// //node constructor class 3
-			// function MyAddNode3() {
-			// 	this.addInput("input1", "number");
-			// 	this.addInput("input2", "number");
-			// 	this.addOutput("sendState", "number");
-			// 	this.properties = {
-			// 		precision: 1
-			// 	};
-			// };
-
-			// //node constructor class 4
-			// function MyAddNode4() {
-			// 	this.addOutput("HTTPS port", "number");
-			// 	this.properties = {
-			// 		precision: 1
-			// 	};
-			// };
-
-			// name to show
-			// MyAddNodeasdfasdf.title = "Tellor Contract";
-			// MyAddNode2.title = "Intake Smart Contract"
-			// MyAddNode3.title = "dApp State Contract";
-			// MyAddNode4.title = "Web API";
-
 			// //function to call when the node is executed
 			// MyAddNodeasdfasdf.prototype.onExecute = function () {
 			// 	var A = this.getInputData(0);
@@ -1107,13 +1072,6 @@
 			// 	this.setOutputData(0, A + B / 2);
 			// }
 
-			// ///////////////////////////////////////
-
-			// register in the system
-			// LiteGraph.registerNodeType("basic/sum", MyAddNodeasdfasdf);
-			// LiteGraph.registerNodeType("basic/contract", MyAddNode2);
-			// LiteGraph.registerNodeType("basic/statecontract", MyAddNode3);
-			// LiteGraph.registerNodeType("basic/webapi", MyAddNode4);
 
 		// oracleSandBox gradeable nodes
 			// constructors
@@ -1171,50 +1129,41 @@
 		var canvas = new LGraphCanvas("#mycanvas", graph2);
 
 
-		let newNode = LiteGraph.createNode("smartContract", "smart contract 1");
-		newNode.pos = [200, 200];
-		graph2.add(newNode);
-		graph2.start();
-		console.log("graph2: ", graph2)
+		// spawn example nodes
+			// spawn smartContract node
+				let newContractNode = LiteGraph.createNode("smartContract", "smart contract 1");
+				newContractNode.pos = [400, 200];
+				graph2.add(newContractNode);
 
+			// spawn oracle node
+				let newOracleNode = LiteGraph.createNode("oracle", "oracle 1");
+				newOracleNode.pos = [100, 200];
+				graph2.add(newOracleNode);
 
-		// console.log("LiteGraph: ", LiteGraph)
-		// var node_const = LiteGraph.createNode("basic/sum", "Oracle Contract");
-		// //createNode is not being defined correctly right now, for some reason
-		// //JS library asks for 3 arguments: createNode: function( type, title, options )
-		// //I think eth.build generates a menu item based on mouse behavior built using a React feature
-		// console.log("node_const: ", node_const);
-		// node_const.pos = [200, 200];
-		// graph2.add(node_const);
-		// // node_const.setValue(4.5);
+		// connect nodes
+			newOracleNode.connect(0, newContractNode, 0 );
 
-		// var node_const = LiteGraph.createNode("basic/contract", "Intake Contract")
-		// node_const.pos = [400, 200]
-		// graph2.add(node_const);
-
-		// var node_watch = LiteGraph.createNode("basic/watch");
-		// node_watch.pos = [700,200];
-		// graph2.add(node_watch);
-
-		// node_const.connect(0, node_watch, 0 );
+		// start rendering graph
+			graph2.start();
+			console.log("graph2: ", graph2)
 
 		// functions for creating new contracts while graph2 is running.
 			function newContract() {
 				console.log("Generating new contract module");
 
-				var node_const3 = LiteGraph.createNode("basic/statecontract", "dApp State Contract")
-
-				node_const.pos = [500, 500];
-				graph2.add(node_const3);
+				// spawn smartContract node
+					let newContractNode = LiteGraph.createNode("smartContract", "smart contract");
+					newContractNode.pos = [400, 200];
+					graph2.add(newContractNode);
 			}
 
 			function newAPI() {
 				console.log("Generating new API");
 
-				var node_const4 = LiteGraph.createNode("basic/webapi", "Web API")
-
-				node_const.pos = [700, 100];
-				graph2.add(node_const4);
+				// spawn smartContract node
+					let newDataSourceNode = LiteGraph.createNode("dataSource", "API data source");
+					newDataSourceNode.pos = [400, 200];
+					graph2.add(newDataSourceNode);
 			}
 	</script>
 
