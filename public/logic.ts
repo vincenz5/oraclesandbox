@@ -139,11 +139,21 @@
                             }
                         }
                         console.log("dataTypeCount:",dataTypeCount)
+                // Grade Quorum Score
+                    gradeTable[contract].dataTypeCount = dataTypeCount
 
                 // Grade Data Reliability
-                   
+                    for (const i in allContractDataSources){
+                        let dataSource = allContractDataSources[i]
+                        if(graph[dataSource].dataType == "temperature"){
+                            if((graph[dataSource].data > comparisonData.temperature[comparisonData.temperature.length-1]) || graph[dataSource].data > comparisonData.temperature[0]){
+                                // If data is not within same range of comparisonData
+                                gradeTable[contract].dataOutliers.push(dataSource)
+                            }else{
 
-                    for (const dataSource in allContractDataSources){
+                            }
+                        }
+
                     }
 
                 // Compare with Known Vulnerabilities
@@ -154,23 +164,13 @@
                             console.log("Vulnerable Imports:",gradeTable[contract].vulnerableImports)
                         }
                     }
-                // Append grades
-
-
-
-                
                     // let quorumRating = 0
                     // let reliabilityGrade = 0
                     // let vulerableLibraries = {}
                     // gradeTable[contract[quorumRating = 0]]
                     
                     return gradeTable;
-            }
-
-
-        // Rate Data Reliability
-        // Compare Known Vulnerabilities
-            
+            }  
         }
 
     function contractImportsContract(contract, importedContract){
@@ -254,6 +254,8 @@
                 assignScopeToDataSource("global", dataSource1)
             // assign data Types to data Sources
                 assignDatatypeToDataSource("temperature", dataSource1)
+                assignDatatypeToDataSource("price", dataSource2)
+                assignDatatypeToDataSource("price", dataSource3)
         // contract/oracle addresses
             assignAddressOfComponent("0x10101", contract3)
     // connect example components

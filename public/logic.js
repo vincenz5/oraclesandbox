@@ -123,8 +123,19 @@ function gradeGraphComponents(graph) {
             }
         }
         console.log("dataTypeCount:", dataTypeCount);
+        // Grade Quorum Score
+        gradeTable[contract].dataTypeCount = dataTypeCount;
         // Grade Data Reliability
-        for (var dataSource in allContractDataSources) {
+        for (var i_1 in allContractDataSources) {
+            var dataSource = allContractDataSources[i_1];
+            if (graph[dataSource].dataType == "temperature") {
+                if ((graph[dataSource].data > comparisonData.temperature[comparisonData.temperature.length - 1]) || graph[dataSource].data > comparisonData.temperature[0]) {
+                    // If data is not within same range of comparisonData
+                    gradeTable[contract].dataOutliers.push(dataSource);
+                }
+                else {
+                }
+            }
         }
         // Compare with Known Vulnerabilities
         for (var importedContract in graph[contract].importedContracts) {
@@ -134,15 +145,12 @@ function gradeGraphComponents(graph) {
                 console.log("Vulnerable Imports:", gradeTable[contract].vulnerableImports);
             }
         }
-        // Append grades
         // let quorumRating = 0
         // let reliabilityGrade = 0
         // let vulerableLibraries = {}
         // gradeTable[contract[quorumRating = 0]]
         return gradeTable;
     }
-    // Rate Data Reliability
-    // Compare Known Vulnerabilities
 }
 function contractImportsContract(contract, importedContract) {
     // assert contracts exist
@@ -209,6 +217,8 @@ var contract3 = createNewComponent("smartContract");
 assignScopeToDataSource("global", dataSource1);
 // assign data Types to data Sources
 assignDatatypeToDataSource("temperature", dataSource1);
+assignDatatypeToDataSource("price", dataSource2);
+assignDatatypeToDataSource("price", dataSource3);
 // contract/oracle addresses
 assignAddressOfComponent("0x10101", contract3);
 // connect example components
