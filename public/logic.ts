@@ -120,7 +120,7 @@
                 // Establish Data Sources
                     // Lists the ID of all data sources the contract uses
                         let allContractDataSources = []
-                        for (const oracle in graph[contract].oracles){
+                        for (const oracle in graph[contract].usedOracles){
                             for (const dataSource in graph[oracle].ports[contract]){
                                 allContractDataSources.push(dataSource)
                             }
@@ -130,7 +130,8 @@
                     // Makes table of the different data types the smart contract uses
                     // and counts how many time each type is used
                         let dataTypeCount = {}
-                        for (const dataSource in allContractDataSources){
+                        for(var i = 0; i < allContractDataSources.length; i++){
+                            let dataSource = allContractDataSources[i]
                             if (graph[dataSource].dataType in dataTypeCount){
                                 dataTypeCount[graph[dataSource].dataType]++
                             }else{
@@ -140,14 +141,11 @@
                         console.log("dataTypeCount:",dataTypeCount)
 
                 // Grade Data Reliability
-                    for(let dataType in dataTypeCount){
-                        if(dataType == "temperature"){
-                            
-                        }
-                        if(dataType == "price"){
-                            
-                        }
+                   
+
+                    for (const dataSource in allContractDataSources){
                     }
+
                 // Compare with Known Vulnerabilities
                     for(let importedContract in graph[contract].importedContracts){
                         if(graph[importedContract].contactAddress in vulnerableContractAddresses){

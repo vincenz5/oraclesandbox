@@ -104,7 +104,7 @@ function gradeGraphComponents(graph) {
         // Establish Data Sources
         // Lists the ID of all data sources the contract uses
         var allContractDataSources = [];
-        for (var oracle in graph[contract].oracles) {
+        for (var oracle in graph[contract].usedOracles) {
             for (var dataSource in graph[oracle].ports[contract]) {
                 allContractDataSources.push(dataSource);
             }
@@ -113,7 +113,8 @@ function gradeGraphComponents(graph) {
         // Makes table of the different data types the smart contract uses
         // and counts how many time each type is used
         var dataTypeCount = {};
-        for (var dataSource in allContractDataSources) {
+        for (var i = 0; i < allContractDataSources.length; i++) {
+            var dataSource = allContractDataSources[i];
             if (graph[dataSource].dataType in dataTypeCount) {
                 dataTypeCount[graph[dataSource].dataType]++;
             }
@@ -123,11 +124,7 @@ function gradeGraphComponents(graph) {
         }
         console.log("dataTypeCount:", dataTypeCount);
         // Grade Data Reliability
-        for (var dataType in dataTypeCount) {
-            if (dataType == "temperature") {
-            }
-            if (dataType == "price") {
-            }
+        for (var dataSource in allContractDataSources) {
         }
         // Compare with Known Vulnerabilities
         for (var importedContract in graph[contract].importedContracts) {
