@@ -274,7 +274,14 @@
 								<h4>Data Feeds</h4>
 								<div id="newAPIMod">
 									<button type="button" class="btn btn-primary" onclick="newAPI()">New API</button>
-									<button type="button" class="btn btn-primary" onclick="newAPI()">New API 2</button>
+									<!-- <button type="button" class="btn btn-primary" onclick="newAPI()">New API 2</button> -->
+								</div>
+							</div>
+							<hr>
+							<div>
+								<h4>Oracles</h4>
+								<div id="newOracleMod">
+									<button type="button" class="btn btn-primary" onclick="newOracle()">New Oracle</button>
 								</div>
 							</div>
 							<hr>
@@ -282,9 +289,16 @@
 								<h4>Smart Contracts</h4>
 								<div id="newContractMod">
 									<button type="button" class="btn btn-primary" onclick="newContract()">New Contract</button>
-									<button type="button" class="btn btn-primary" onclick="newContract()">New Contract 2</button>
 								</div>
 							</div>
+							<hr>
+							<div>
+								<h4>Other</h4>
+								<div id="newPortMod">
+									<button type="button" class="btn btn-primary" onclick="newPort()">New Port</button>
+								</div>
+							</div>
+							
 
 						</div>
 						<hr>
@@ -1051,132 +1065,145 @@
 	<script>
 
 		// example Nodes
-			//node constructor class 1
-			function MyAddNodeasdfasdf() {
-				this.addInput("A", "number");
-				this.addInput("B", "number");
-				this.addOutput("A+B/2", "number");
-				this.properties = {
-					precision: 1
+			// //node constructor class 1
+			// function MyAddNodeasdfasdf() {
+			// 	this.addInput("A", "number");
+			// 	this.addInput("B", "number");
+			// 	this.addOutput("A+B/2", "number");
+			// 	this.properties = {
+			// 		precision: 1
+			// 	};
+			// }
+
+			// //function to call when the node is executed
+			// MyAddNodeasdfasdf.prototype.onExecute = function () {
+			// 	var A = this.getInputData(0);
+			// 	if (A === undefined)
+			// 		A = 0;
+			// 	var B = this.getInputData(1);
+			// 	if (B === undefined)
+			// 		B = 0;
+			// 	this.setOutputData(0, A + B / 2);
+			// }
+
+
+		// oracleSandBox gradeable nodes
+			// constructors
+				function dataSourceNode() {
+					this.addOutput("dataFeed", "number");
+					this.properties = {
+						precision: 1
+					};
 				};
-			}
 
-			//node constructor class 2
-			function MyAddNode2() {
-				this.addInput("intake1", "number");
-				this.addInput("intake2", "number");
-				this.addOutput("txnCreate", "number");
-				this.addOutput("stateUpdate", "number");
-				this.properties = {
-					precision: 1
+				function portNode() {
+					this.addInput("data source", "number");
+					this.addInput("data source", "number");
+					this.addInput("data source", "number");
+					this.addOutput("data for oracle", "number");
+					this.properties = {
+						precision: 1
+					};
 				};
-			};
 
-			//node constructor class 3
-			function MyAddNode3() {
-				this.addInput("input1", "number");
-				this.addInput("input2", "number");
-				this.addOutput("sendState", "number");
-				this.properties = {
-					precision: 1
+				function oracleNode() {
+					this.addInput("SC-0 data source", "number");
+					this.addOutput("smart contract 0", "number");
+
+					this.addInput("SC-1 data source", "number");
+					this.addOutput("smart contract 1", "number");
+
+					this.addInput("SC-2 data source", "number");
+					this.addOutput("smart contract 2", "number");
+					this.properties = {
+						precision: 1
+					};
 				};
-			};
 
-			//node constructor class 4
-			function MyAddNode4() {
-				this.addOutput("HTTPS port", "number");
-				this.properties = {
-					precision: 1
+				function smartContractNode() {
+					this.addInput("oracle data", "number");
+
+					this.addInput("imported library", "number");
+					this.addOutput("is library for", "number");
+					this.properties = {
+						precision: 1
+					};
 				};
-			};
 
-			name to show
-			MyAddNodeasdfasdf.title = "Tellor Contract";
-			MyAddNode2.title = "Intake Smart Contract"
-			MyAddNode3.title = "dApp State Contract";
-			MyAddNode4.title = "Web API";
+			// assign titles
+				dataSourceNode.title = "dataSource"
+				portNode.title = "port"
+				oracleNode.title = "oracle"
+				smartContractNode.title = "smartContractNode"
 
-			//function to call when the node is executed
-			MyAddNodeasdfasdf.prototype.onExecute = function () {
-				var A = this.getInputData(0);
-				if (A === undefined)
-					A = 0;
-				var B = this.getInputData(1);
-				if (B === undefined)
-					B = 0;
-				this.setOutputData(0, A + B / 2);
-			}
 
-			///////////////////////////////////////
-
-			register in the system
-			LiteGraph.registerNodeType("basic/sum", MyAddNodeasdfasdf);
-			LiteGraph.registerNodeType("basic/contract", MyAddNode2);
-			LiteGraph.registerNodeType("basic/statecontract", MyAddNode3);
-			LiteGraph.registerNodeType("basic/webapi", MyAddNode4);
-
-		// // oracleSandBox gradeable nodes
-		// 	// constructors
-		// 		function dataSourceNode() {
-		// 			this.addOutput("dataFeed", "number");
-		// 			this.properties = {
-		// 				precision: 1
-		// 			};
-		// 		};
-
-		// 	// assign titles
-		// 		dataSourceNode.title = "dataSource"
-
-		// 	//register in the system
-		// 		LiteGraph.registerNodeType("dataSource", dataSourceNode);
+			//register in the system
+				LiteGraph.registerNodeType("dataSource", dataSourceNode);
+				LiteGraph.registerNodeType("port", portNode)
+				LiteGraph.registerNodeType("oracle", oracleNode)
+				LiteGraph.registerNodeType("smartContract", smartContractNode)
 
 
 		var graph2 = new LGraph();
 
-
 		var canvas = new LGraphCanvas("#mycanvas", graph2);
 
-		console.log("LiteGraph: ", LiteGraph)
-		var node_const = LiteGraph.createNode("basic/sum", "Oracle Contract");
-		//createNode is not being defined correctly right now, for some reason
-		//JS library asks for 3 arguments: createNode: function( type, title, options )
-		//I think eth.build generates a menu item based on mouse behavior built using a React feature
-		console.log("node_const: ", node_const);
-		node_const.pos = [200, 200];
-		graph2.add(node_const);
-		// node_const.setValue(4.5);
 
-		var node_const = LiteGraph.createNode("basic/contract", "Intake Contract")
-		node_const.pos = [400, 200]
-		graph2.add(node_const);
+		// spawn example nodes
+			// spawn smartContract node
+				let newContractNode = LiteGraph.createNode("smartContract", "smart contract");
+				newContractNode.pos = [400, 200];
+				graph2.add(newContractNode);
 
-		// var node_watch = LiteGraph.createNode("basic/watch");
-		// node_watch.pos = [700,200];
-		// graph2.add(node_watch);
+			// spawn oracle node
+				let newOracleNode = LiteGraph.createNode("oracle", "oracle");
+				newOracleNode.pos = [100, 200];
+				graph2.add(newOracleNode);
 
-		// node_const.connect(0, node_watch, 0 );
+		// connect nodes
+			newOracleNode.connect(0, newContractNode, 0 );
 
-		graph2.start();
+		// start rendering graph
+			graph2.start();
+			console.log("graph2: ", graph2)
 
-		console.log("graph2: ", graph2)
+		// functions for creating new contracts while graph2 is running.
 
-		function newContract() {
-			console.log("Generating new contract module");
+			function newContract() {
+				console.log("Generating new contract module");
 
-			var node_const3 = LiteGraph.createNode("basic/statecontract", "dApp State Contract")
+				// spawn smartContract node
+					let newContractNode = LiteGraph.createNode("smartContract", "smart contract");
+					newContractNode.pos = [250, 100]
+					graph2.add(newContractNode);
+			}
 
-			node_const.pos = [500, 500];
-			graph2.add(node_const3);
-		}
+			function newAPI() {
+				console.log("Generating new API");
 
-		function newAPI() {
-			console.log("Generating new API");
+				// spawn smartContract node
+					let newDataSourceNode = LiteGraph.createNode("dataSource", "API data source");
+					newDataSourceNode.pos = [250, 100]
+					graph2.add(newDataSourceNode);
+			}
 
-			var node_const4 = LiteGraph.createNode("basic/webapi", "Web API")
+			function newOracle() {
+				console.log("Generating new API");
 
-			node_const.pos = [700, 100];
-			graph2.add(node_const4);
-		}
+				// spawn smartContract node
+					let newDataSourceNode = LiteGraph.createNode("oracle", "oracle");
+					newDataSourceNode.pos = [250, 100]
+					graph2.add(newDataSourceNode);
+			}
+
+			function newPort() {
+				console.log("Generating new API");
+
+				// spawn smartContract node
+					let newDataSourceNode = LiteGraph.createNode("port", "port");
+					newDataSourceNode.pos = [250, 100]
+					graph2.add(newDataSourceNode);
+			}
 	</script>
 
 	<script src="./gradeengine.js"></script>
