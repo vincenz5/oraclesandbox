@@ -1049,70 +1049,90 @@
 	</div>
 
 	<script>
-		//node constructor class 1
-		function MyAddNode() {
-			this.addInput("A", "number");
-			this.addInput("B", "number");
-			this.addOutput("A+B/2", "number");
-			this.properties = {
-				precision: 1
+
+		// example Nodes
+			//node constructor class 1
+			function MyAddNodeasdfasdf() {
+				this.addInput("A", "number");
+				this.addInput("B", "number");
+				this.addOutput("A+B/2", "number");
+				this.properties = {
+					precision: 1
+				};
+			}
+
+			//node constructor class 2
+			function MyAddNode2() {
+				this.addInput("intake1", "number");
+				this.addInput("intake2", "number");
+				this.addOutput("txnCreate", "number");
+				this.addOutput("stateUpdate", "number");
+				this.properties = {
+					precision: 1
+				};
 			};
-		}
 
-		//node constructor class 2
-		function MyAddNode2() {
-			this.addInput("intake1", "number");
-			this.addInput("intake2", "number");
-			this.addOutput("txnCreate", "number");
-			this.addOutput("stateUpdate", "number");
-			this.properties = {
-				precision: 1
+			//node constructor class 3
+			function MyAddNode3() {
+				this.addInput("input1", "number");
+				this.addInput("input2", "number");
+				this.addOutput("sendState", "number");
+				this.properties = {
+					precision: 1
+				};
 			};
-		};
 
-		//node constructor class 3
-		function MyAddNode3() {
-			this.addInput("input1", "number");
-			this.addInput("input2", "number");
-			this.addOutput("sendState", "number");
-			this.properties = {
-				precision: 1
+			//node constructor class 4
+			function MyAddNode4() {
+				this.addOutput("HTTPS port", "number");
+				this.properties = {
+					precision: 1
+				};
 			};
-		};
 
-		//node constructor class 4
-		function MyAddNode4() {
-			this.addOutput("HTTPS port", "number");
-			this.properties = {
-				precision: 1
-			};
-		};
+			name to show
+			MyAddNodeasdfasdf.title = "Tellor Contract";
+			MyAddNode2.title = "Intake Smart Contract"
+			MyAddNode3.title = "dApp State Contract";
+			MyAddNode4.title = "Web API";
 
-		//name to show
-		MyAddNode.title = "Tellor Contract";
-		MyAddNode2.title = "Intake Smart Contract"
-		MyAddNode3.title = "dApp State Contract";
-		MyAddNode4.title = "Web API";
+			//function to call when the node is executed
+			MyAddNodeasdfasdf.prototype.onExecute = function () {
+				var A = this.getInputData(0);
+				if (A === undefined)
+					A = 0;
+				var B = this.getInputData(1);
+				if (B === undefined)
+					B = 0;
+				this.setOutputData(0, A + B / 2);
+			}
 
-		//function to call when the node is executed
-		MyAddNode.prototype.onExecute = function () {
-			var A = this.getInputData(0);
-			if (A === undefined)
-				A = 0;
-			var B = this.getInputData(1);
-			if (B === undefined)
-				B = 0;
-			this.setOutputData(0, A + B / 2);
-		}
+			///////////////////////////////////////
 
-		/////////////////////////////////////////
+			register in the system
+			LiteGraph.registerNodeType("basic/sum", MyAddNodeasdfasdf);
+			LiteGraph.registerNodeType("basic/contract", MyAddNode2);
+			LiteGraph.registerNodeType("basic/statecontract", MyAddNode3);
+			LiteGraph.registerNodeType("basic/webapi", MyAddNode4);
 
-		//register in the system
-		LiteGraph.registerNodeType("basic/sum", MyAddNode);
-		LiteGraph.registerNodeType("basic/contract", MyAddNode2);
-		LiteGraph.registerNodeType("basic/statecontract", MyAddNode3);
-		LiteGraph.registerNodeType("basic/webapi", MyAddNode4);
+		// // oracleSandBox gradeable nodes
+		// 	// constructors
+		// 		function dataSourceNode() {
+		// 			this.addOutput("dataFeed", "number");
+		// 			this.properties = {
+		// 				precision: 1
+		// 			};
+		// 		};
+
+		// 	// assign titles
+		// 		dataSourceNode.title = "dataSource"
+
+		// 	//register in the system
+		// 		LiteGraph.registerNodeType("dataSource", dataSourceNode);
+
+
 		var graph2 = new LGraph();
+
 
 		var canvas = new LGraphCanvas("#mycanvas", graph2);
 
