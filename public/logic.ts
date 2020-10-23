@@ -289,5 +289,6 @@
 
 
 
-console.log(graph)
+
+console.log("graph: ", graph)
 gradeGraphComponents(graph)

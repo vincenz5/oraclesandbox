@@ -247,5 +247,6 @@ for (var uid in graph) {
     }
 }
 giveValuesToDataSources(dataSources);
-console.log(graph);
+
+console.log("graph: ", graph);
 gradeGraphComponents(graph);
