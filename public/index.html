@@ -1124,30 +1124,73 @@
 					};
 				};
 
+				function oraclePortNode() {
+					this.addInput("data source", "number");
+					this.addInput("data source", "number");
+					this.addInput("data source", "number");
+					this.addOutput("data for oracle", "number");
+					this.properties = {
+						precision: 1
+					};
+				};
+
+				function oracleNode() {
+					this.addInput("data source", "number");
+					this.addOutput("smart contract", "number");
+					this.properties = {
+						precision: 1
+					};
+				};
+
+				function smartContractNode() {
+					this.addInput("oracle data", "number");
+
+					this.addInput("imported library", "number");
+					this.addOutput("is library for", "number");
+					this.properties = {
+						precision: 1
+					};
+				};
+
 			// assign titles
 				dataSourceNode.title = "dataSource"
+				oraclePortNode.title = "oraclePort"
+				oracleNode.title = "oracle"
+				smartContractNode.title = "smartContractNode"
+
 
 			//register in the system
 				LiteGraph.registerNodeType("dataSource", dataSourceNode);
+				LiteGraph.registerNodeType("oraclePort", oraclePortNode)
+				LiteGraph.registerNodeType("oracle", oracleNode)
+				LiteGraph.registerNodeType("smartContract", smartContractNode)
 
 
 		var graph2 = new LGraph();
 
 		var canvas = new LGraphCanvas("#mycanvas", graph2);
 
-		console.log("LiteGraph: ", LiteGraph)
-		var node_const = LiteGraph.createNode("basic/sum", "Oracle Contract");
-		//createNode is not being defined correctly right now, for some reason
-		//JS library asks for 3 arguments: createNode: function( type, title, options )
-		//I think eth.build generates a menu item based on mouse behavior built using a React feature
-		console.log("node_const: ", node_const);
-		node_const.pos = [200, 200];
-		graph2.add(node_const);
-		// node_const.setValue(4.5);
 
-		var node_const = LiteGraph.createNode("basic/contract", "Intake Contract")
-		node_const.pos = [400, 200]
-		graph2.add(node_const);
+		let newNode = LiteGraph.createNode("smartContract", "smart contract 1");
+		newNode.pos = [200, 200];
+		graph2.add(newNode);
+		graph2.start();
+		console.log("graph2: ", graph2)
+
+
+		// console.log("LiteGraph: ", LiteGraph)
+		// var node_const = LiteGraph.createNode("basic/sum", "Oracle Contract");
+		// //createNode is not being defined correctly right now, for some reason
+		// //JS library asks for 3 arguments: createNode: function( type, title, options )
+		// //I think eth.build generates a menu item based on mouse behavior built using a React feature
+		// console.log("node_const: ", node_const);
+		// node_const.pos = [200, 200];
+		// graph2.add(node_const);
+		// // node_const.setValue(4.5);
+
+		// var node_const = LiteGraph.createNode("basic/contract", "Intake Contract")
+		// node_const.pos = [400, 200]
+		// graph2.add(node_const);
 
 		// var node_watch = LiteGraph.createNode("basic/watch");
 		// node_watch.pos = [700,200];
@@ -1155,27 +1198,24 @@
 
 		// node_const.connect(0, node_watch, 0 );
 
-		graph2.start();
+		// functions for creating new contracts while graph2 is running.
+			function newContract() {
+				console.log("Generating new contract module");
 
-		console.log("graph2: ", graph2)
+				var node_const3 = LiteGraph.createNode("basic/statecontract", "dApp State Contract")
 
-		function newContract() {
-			console.log("Generating new contract module");
+				node_const.pos = [500, 500];
+				graph2.add(node_const3);
+			}
 
-			var node_const3 = LiteGraph.createNode("basic/statecontract", "dApp State Contract")
+			function newAPI() {
+				console.log("Generating new API");
 
-			node_const.pos = [500, 500];
-			graph2.add(node_const3);
-		}
+				var node_const4 = LiteGraph.createNode("basic/webapi", "Web API")
 
-		function newAPI() {
-			console.log("Generating new API");
-
-			var node_const4 = LiteGraph.createNode("basic/webapi", "Web API")
-
-			node_const.pos = [700, 100];
-			graph2.add(node_const4);
-		}
+				node_const.pos = [700, 100];
+				graph2.add(node_const4);
+			}
 	</script>
 
 	<script src="./gradeengine.js"></script>
